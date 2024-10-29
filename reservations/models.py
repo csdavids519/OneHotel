@@ -23,9 +23,9 @@ class Rooms(models.Model):
     )
 
     room_number = models.IntegerField(unique=True)
-    room_type = models.CharField(choices= ROOM_TYPE)
+    room_type = models.CharField( null=True, choices= ROOM_TYPE)
     floor = models.IntegerField()
-    bed_type = models.CharField(choices= BED_TYPE)
+    bed_type = models.CharField( null=True, choices= BED_TYPE)
     start_date = models.DateField()
     end_date = models.DateField()
     booking_code = models.ForeignKey(
