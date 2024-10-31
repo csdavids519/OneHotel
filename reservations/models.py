@@ -2,14 +2,14 @@ from django.db import models
 
 
 # Create your models here.
-class Bookings(models.Model):
+class Booking(models.Model):
     booking_code = models.CharField(max_length=5, unique=True)
 
     def __str__(self):
         return self.booking_code
     
 
-class Rooms(models.Model):
+class Room(models.Model):
     ROOM_TYPE = (
         ('1','Basic'),
         ('2','Premium'),
@@ -29,7 +29,7 @@ class Rooms(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     booking_code = models.ForeignKey(
-        Bookings, on_delete=models.CASCADE)
+        Booking, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.room_number)
@@ -41,7 +41,7 @@ class Customer(models.Model):
     last_name = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     booking_code = models.ForeignKey(
-        Bookings, on_delete=models.CASCADE)
+        Booking, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.last_name

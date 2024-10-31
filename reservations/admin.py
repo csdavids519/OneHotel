@@ -1,9 +1,10 @@
 from django.contrib import admin
-
-# Register your models here.
-
 from .models import *
 
+# Register your models here.
 admin.site.register(Customer)
-admin.site.register(Bookings)
-admin.site.register(Rooms)
+admin.site.register(Booking)
+admin.site.register(Room)
+
+
+
