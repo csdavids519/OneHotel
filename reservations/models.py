@@ -23,11 +23,11 @@ class Room(models.Model):
     )
 
     room_number = models.IntegerField(unique=True)
-    room_type = models.CharField( null=True, choices= ROOM_TYPE)
-    floor = models.IntegerField()
+    room_type = models.CharField(null=True, choices= ROOM_TYPE)
+    floor = models.IntegerField(null=True)
     bed_type = models.CharField( null=True, choices= BED_TYPE)
-    start_date = models.DateField()
-    end_date = models.DateField()
+    reserved_start_date = models.DateField(null=True)
+    reserved_end_date = models.DateField(null=True)
     booking_code = models.ForeignKey(
         Booking, on_delete=models.CASCADE)
 
@@ -44,9 +44,4 @@ class Customer(models.Model):
         Booking, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.last_name
-    
-    def __str__(self):
-        return self.customer_id
-
-
+        return f"{self.customer_id} - {self.last_name}"
