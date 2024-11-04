@@ -10,17 +10,11 @@ class RoomAdmin(admin.ModelAdmin):
     list_display = ['room_number',
                     'room_type',
                     'floor',
-                    'bed_type',
-                    'reserved_start_date',
-                    'reserved_end_date',
-                    'booking_code']
+                    'bed_type',]
     list_filter = ['room_number',
                     'room_type',
                     'floor',
-                    'bed_type',
-                    'reserved_start_date',
-                    'reserved_end_date',
-                    'booking_code']
+                    'bed_type',]
     show_facets = admin.ShowFacets.ALWAYS
 
 
