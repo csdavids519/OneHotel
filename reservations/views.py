@@ -17,6 +17,21 @@ from .models import Room
 
 #     return render(request, "room_detail.html", context)
     
-def RoomsList(request):
-    rooms = Room.objects.all()
-    return render(request, "index.html", {"rooms": rooms})
+# def RoomsList(request):
+#     rooms = Room.objects.all()
+#     return render(request, "index.html", {"rooms": rooms})
+
+
+def FilterList(request):
+    qs = Room.objects.all()
+    room_type_query = request.GET.get('room_type')
+    bed_type_query = request.GET.get('bed_type')
+
+    if room_type_query != '' and room_type_query is not None:
+        qs = qs.filter(room_type__icontains=room_type_query)
+
+    context = {
+        'queryset': qs
+    }
+
+    return render(request, "index.html", context)

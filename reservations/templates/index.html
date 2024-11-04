@@ -3,22 +3,59 @@
 {% block content %}
 
 <!-- index.html content starts here -->
-<div class="container-fluid">
+<!-- room search bar -->
+
+ <h2> Find the room for you</h2>
+ <form method="GET" action=".">
     <div class="row">
-        <h1>THIS IS THE INDEX.HTML</h1>
+      <div class="col">
+        <select id="category" class="form-control" name="room_type" aria-placeholder="Room Type">
+            <option selected>Room Type</option>
+            <option value="Basic">Basic</option>
+            <option value="Premium">Premium</option>
+            <option value="Executive">Executive</option>
+        </select>
+      </div>
+      <div class="col">
+        <select id="category" class="form-control" name="bed_type" aria-placeholder="Bed Type">
+            <option selected>Room Type</option>
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Queen">Queen</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="ReservationDateStart">Start Date</label>
+        <input type="date" class="form-control" name="date_start">
+      </div>
+      <div class="col">
+        <label for="ReservationDateEnd">End Date</label>
+        <input type="date" class="form-control" name="date_end">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<!-- search results -->
+ <hr />
+
+<div class="container">
+    <div class="row">
         <div>
-            {% for room in rooms %}
+            {% for room in queryset %}
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="image-container">
-                            <p>this is some text to make some space, on the page.</p>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img src="..." class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">{{ room.room_number }}</h5>
+                            <h5 class="card-title">{{ room.room_type }}</h5>
+                            <h6 class="card-title">{{ room.bed_type }}</h6>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>

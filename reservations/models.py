@@ -11,15 +11,15 @@ class Booking(models.Model):
 
 class Room(models.Model):
     ROOM_TYPE = (
-        ('1','Basic'),
-        ('2','Premium'),
-        ('3','Executive'),
+        ('Basic','Basic'),
+        ('Premium','Premium'),
+        ('Executive','Executive'),
     )
 
     BED_TYPE = (
-        ('1','Single Bed'),
-        ('2','Double Bed'),
-        ('3','Queen Bed'),
+        ('Single Bed','Single Bed'),
+        ('Double Bed','Double Bed'),
+        ('Queen Bed','Queen Bed'),
     )
 
     room_number = models.IntegerField(unique=True)
