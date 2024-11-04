@@ -22,13 +22,26 @@ from .models import Room
 #     return render(request, "index.html", {"rooms": rooms})
 
 
+
+def is_valid_queryparam(param):
+    return param != '' and param is not None
+
 def FilterList(request):
     qs = Room.objects.all()
     room_type_query = request.GET.get('room_type')
     bed_type_query = request.GET.get('bed_type')
 
-    if room_type_query != '' and room_type_query is not None:
+    if room_type_query and bed_type_query:
+        qs = qs.filter( 
+            room_type__icontains=room_type_query,
+            bed_type__icontains=bed_type_query
+        )
+
+    elif room_type_query:
         qs = qs.filter(room_type__icontains=room_type_query)
+
+    elif bed_type_query:
+        qs = qs.filter(bed_type__icontains=bed_type_query)
 
     context = {
         'queryset': qs
