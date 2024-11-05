@@ -42,13 +42,13 @@ def FilterList(request):
     print('room query:',room_type_query, 'bed query:',bed_type_query,
           'cin query:',check_in_query, 'cout query:',check_out_query)
 
-    if room_type_query :
+    if room_type_query != "Any":
         qs = qs.filter(room_type=room_type_query)
         # debug
         print('room:',qs)
 
  
-    if bed_type_query:
+    if bed_type_query != "Any":
         qs = qs.filter(bed_type=bed_type_query)
         # debug
         print('bed:',qs)
