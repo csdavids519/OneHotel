@@ -4,23 +4,8 @@ from .models import Room, Booking
 from datetime import datetime
 
 # Create your views here.
-
-# class RoomsList(generic.ListView):
-#     # queryset = Room.objects.filter(Room=1)
-#     template_name = "index.html" 
-#     paginate_by = 6
-
-
-# def room_detail(request):
-#     room_number = Room.objects.all()
-   
-#     context = {'room_number':room_number}
-
-#     return render(request, "room_detail.html", context)
-    
-# def RoomsList(request):
-#     rooms = Room.objects.all()
-#     return render(request, "index.html", {"rooms": rooms})
+# ref Matt Freire
+# ref booking check DarshanDev
 
 def check_availability(check_in, check_out):
     available_rooms_list=[]
@@ -41,87 +26,45 @@ def check_availability(check_in, check_out):
     return available_rooms_list
 
 
-
-    #     if booking.reserved_start_date > check_out or booking.reserved_end_date < check_in:
-    #         availability_list.append(True)
-    #     else:
-    #         availability_list(False)
-    # return all(availability_list) #returns true when all items in availability_list are true
-
-
-
-
-
-
-# ref Matt Freire
-# ref booking check DarshanDev
 def FilterList(request):
     qs = Room.objects.all()
-    room_type_query = request.GET.get('room_type')
-    bed_type_query = request.GET.get('bed_type')
+    
+    # Collect all filter parameters from the request
+    room_type_query = request.GET.get('room_type', '')
+    bed_type_query = request.GET.get('bed_type', '')
     check_in_query = request.GET.get('date_check_in')
     check_out_query = request.GET.get('date_check_out')
 
+    if request.GET:
+        qs = Room.objects.all()
+
+    # debug
+    print('room query:',room_type_query, 'bed query:',bed_type_query,
+          'cin query:',check_in_query, 'cout query:',check_out_query)
+
+    if room_type_query :
+        qs = qs.filter(room_type=room_type_query)
+        # debug
+        print('room:',qs)
+
+ 
+    if bed_type_query:
+        qs = qs.filter(bed_type=bed_type_query)
+        # debug
+        print('bed:',qs)
 
 
-
-    # check room is available if dates are selected
     if check_in_query and check_out_query:
-        # Get available rooms from the check_availability function
         available_rooms = check_availability(check_in_query, check_out_query)
-        # Print the list of available rooms to the console
-        print("Available Rooms:", available_rooms)
-        # Filter the queryset to only include the available rooms
-        qs = qs.filter(id__in=[room.id for room in available_rooms])
+        # Filter queryset to include only available rooms
+        qs = qs.filter(id__in=available_rooms)
 
+        # debug
+        print('date:',qs)
 
-    # if room_type_query and bed_type_query:
-    #     qs = qs.filter( 
-    #         room_type__icontains=room_type_query,
-    #         bed_type__icontains=bed_type_query
-    #     )
-
-    # elif room_type_query:
-    #     qs = qs.filter(room_type__icontains=room_type_query)
-
-    # elif bed_type_query:
-    #     qs = qs.filter(bed_type__icontains=bed_type_query)
 
     context = {
         'queryset': qs
     }
 
     return render(request, "index.html", context)
-
-
-
-# def FilterList(request):
-#     qs = Room.objects.all()
-    
-#     # Collect all filter parameters from the request
-#     room_type_query = request.GET.get('room_type', '').strip()
-#     bed_type_query = request.GET.get('bed_type', '').strip()
-#     price_query = request.GET.get('price', '').strip()
-#     availability_query = request.GET.get('availability', '').strip()
-#     guest_capacity_query = request.GET.get('guest_capacity', '').strip()
-
-#     # Create a dictionary for filtering based on the provided parameters
-#     filter_params = {}
-
-#     if room_type_query:
-#         filter_params['room_type__icontains'] = room_type_query
-#     if bed_type_query:
-#         filter_params['bed_type__icontains'] = bed_type_query
-#     if availability_query:
-#         filter_params['availability__icontains'] = availability_query
-
-#     # Apply all filters at once
-#     if filter_params:
-#         qs = qs.filter(**filter_params)
-
-#     context = {
-#         'queryset': qs
-#     }
-
-#     return render(request, "index.html", context)
-

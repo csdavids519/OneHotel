@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col">
         <select id="category" class="form-control" name="room_type" aria-placeholder="Room Type">
-            <option selected>Room Type</option>
+            <option value="Any" selected>Any room type</option>
             <option value="Basic">Basic</option>
             <option value="Premium">Premium</option>
             <option value="Executive">Executive</option>
@@ -18,10 +18,10 @@
       </div>
       <div class="col">
         <select id="category" class="form-control" name="bed_type" aria-placeholder="Bed Type">
-            <option selected>Bed Type</option>
-            <option value="Single">Single</option>
-            <option value="Double">Double</option>
-            <option value="Queen">Queen</option>
+            <option selected>Any bed type</option>
+            <option value="Single">Single Bed</option>
+            <option value="Double">Double Bed</option>
+            <option value="Queen">Queen Bed</option>
         </select>
       </div>
     </div>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ room.room_type }}</h5>
-                            <h6 class="card-title">{{ room.bed_type }}</h6>
+                            <h6 class="card-title">{{ room.bed_type }}...{{ room.room_number }}</h6>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>

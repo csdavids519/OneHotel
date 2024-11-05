@@ -1,9 +1,8 @@
 from django.db import models
 
 
+
 # Create your models here.
-
-
 class Room(models.Model):
     ROOM_TYPE = (
         ('Basic','Basic'),
@@ -12,16 +11,15 @@ class Room(models.Model):
     )
 
     BED_TYPE = (
-        ('Single Bed','Single Bed'),
-        ('Double Bed','Double Bed'),
-        ('Queen Bed','Queen Bed'),
+        ('Single','Single Bed'),
+        ('Double','Double Bed'),
+        ('Queen','Queen Bed'),
     )
 
     room_number = models.IntegerField(unique=True)
     room_type = models.CharField(null=True, choices= ROOM_TYPE)
     floor = models.IntegerField(null=True)
     bed_type = models.CharField( null=True, blank=True, choices= BED_TYPE)
-
 
     def __str__(self):
         return str(self.room_number)
