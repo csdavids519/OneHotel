@@ -12,15 +12,16 @@ def FilterList(request):
     # Collect all filter parameters from the request
     room_type_query = request.GET.get('room_type', '')
     bed_type_query = request.GET.get('bed_type', '')
-    check_in_query = request.GET.get('date_check_in')
-    check_out_query = request.GET.get('date_check_out')
+    view_type_query = request.GET.get('view_type','')
 
     if request.GET:
         qs = Room.objects.all()
 
     # debug
     print('room query:',room_type_query, 'bed query:',bed_type_query,
-          'cin query:',check_in_query, 'cout query:',check_out_query)
+          'view query:', view_type_query
+    )
+
 
     if room_type_query != "Any":
         qs = qs.filter(room_type=room_type_query)
@@ -32,6 +33,11 @@ def FilterList(request):
         qs = qs.filter(bed_type=bed_type_query)
         # debug
         print('bed:',qs)
+
+    if view_type_query != "Any":
+        qs = qs.filter(view=view_type_query)
+        # debug
+        print('view:',qs)
 
     context = {
         'queryset': qs

@@ -15,10 +15,17 @@ class Room(models.Model):
         ('Queen','Queen Bed'),
     )
 
+    VIEW = (
+        ('Ocean','Ocean'),
+        ('City','City'),
+    )
+
     room_number = models.IntegerField(unique=True)
-    room_type = models.CharField(null=True, choices= ROOM_TYPE)
+    room_type = models.CharField(null=True, choices=ROOM_TYPE)
     floor = models.IntegerField(null=True)
-    bed_type = models.CharField( null=True, blank=True, choices= BED_TYPE)
+    bed_type = models.CharField( null=True, choices=BED_TYPE)
+    view = models.CharField(null=True, choices=VIEW)
+    
 
     def __str__(self):
         return str(self.room_number)
