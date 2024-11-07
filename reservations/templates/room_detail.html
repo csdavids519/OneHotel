@@ -1,6 +1,5 @@
 {% extends 'base.html' %} 
 {% load static %}
-{% load crispy_forms_tags %}
 
 {% block content %}
 <h1>THIS IS ROOM DETAIL.HTML</h1>
@@ -9,9 +8,14 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ RoomNumber }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <h1>ROOM NUMBER: {{ room.room_type }}</h1>
+                <ul>
+                    <li>Number: {{ room_number }}</li>
+                    <li>Floor: {{ floor }}</li>
+                    <li>Number: {{ room_type }}</li>
+                    <li>bed_type: {{ bed_type }}</li>
+                    <li>view: {{ view }}</li>
+                </ul>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
@@ -21,17 +25,88 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text">
-                    {{ post.content | safe }}
-                </p>
+    <div class="row">   
+        <div class="col">
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="First Name" aria-label="FirstName" aria-describedby="input users first name">
+            </div>
+        </div>
+        <div class="col">
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Last Name" aria-label="LastName" aria-describedby="input users last name">
             </div>
         </div>
     </div>
+    <div class="row">   
+        <div class="col">
+            <div class="input-group flex-nowrap">
+                <input type="date" class="form-control" placeholder="First Name" aria-label="FirstName" aria-describedby="input users first name">
+            </div>
+        </div>
+        <div class="col">
+            <div class="input-group flex-nowrap">
+                <input type="date" class="form-control" placeholder="Last Name" aria-label="LastName" aria-describedby="input users last name">
+            </div>
+        </div>
+    </div>
+    <div class="row">   
+        <div class="col-6">
+            <button type="submit" class="btn btn-primary">Book Room</button>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+        <form method="POST" action=".">
+            <div class="col">
+                <div class="input-group flex-nowrap">
+                    <input type="text" class="form-control" placeholder="First Name" aria-label="FirstName" aria-describedby="input users first name">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group flex-nowrap">
+                    <input type="text" class="form-control" placeholder="Last Name" aria-label="LastName" aria-describedby="input users last name">
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+                    <div class="form-group">
+                        <div class="form">
+                    </div>
+       
+
+          <div class="input-group flex-nowrap">
+            <input type="date" class="form-control" placeholder="Start Date" aria-label="StartDate" aria-describedby="input reservation start date">
+          </div>
+          <div class="input-group flex-nowrap">
+            <input type="date" class="form-control" placeholder="End Date" aria-label="EndDate" aria-describedby="input reservation end date">
+          </div>
+    </div>
+</div>
+ -->
+
+
+
+
 
 {% endblock content %}

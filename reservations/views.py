@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Room
 
@@ -44,3 +44,26 @@ def FilterList(request):
     }
 
     return render(request, "index.html", context)
+
+
+
+
+def room_detail(request, room_number):
+    qs = Room.objects.all()
+    room = get_object_or_404(qs, room_number=room_number)
+    room_type = room.room_type
+    floor = room.floor
+    bed_type = room.bed_type
+    view =room.view
+
+    return render(
+        request, "room_detail.html",
+        {
+            'room_number': room,
+            'room_type': room_type,
+            'floor': floor,
+            'bed_type': bed_type,
+            'view': view,
+
+        }
+    )
