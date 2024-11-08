@@ -45,29 +45,31 @@
  <hr />
 
 <div class="container">
-    <div class="row">
-        <div>
-            {% for room in queryset %}
-            <div class="col-md-4">
-                <div class="card mb-4">
+    {% for room in queryset %}
+    <div class="row">     
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="card m-3" style="width: 18rem;">
+                    {% if "placeholder" in room.room_image.url %}
+                    <img src="{% static 'images/default.jpg' %}" class="scale"
+                      alt="placeholder image">
+                    {% else %}
+                    <img src="{{ room.room_image.url }}" class="scale"
+                      alt="{{ post.title }}">
+                    {% endif %}
+                    </div>
                     <div class="card-body">
-                        <div class="image-container">
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ room.room_type }}</h5>
-                            <h6 class="card-title">{{ room.bed_type }}...{{ room.room_number }}</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{% url 'room_detail' room.room_number %}" class="btn btn-primary">Book This Room!</a>
-                        </div>
+                        <h5 class="card-title">{{ room.room_type }}</h5>
+                        <h6 class="card-title">{{ room.bed_type }}...{{ room.room_number }}</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="{% url 'room_detail' room.room_number %}" class="btn btn-primary">Book This Room!</a>
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
     </div>
+    {% endfor %}
 </div>
 
 <!-- index.html content ends here -->
