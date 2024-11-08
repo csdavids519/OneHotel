@@ -10,7 +10,10 @@ class RoomAdmin(admin.ModelAdmin):
     list_display = ['room_number',
                     'room_type',
                     'floor',
-                    'bed_type',]
+                    'bed_type',
+                    'view',
+                    'room_image',]
+    
     list_filter = ['room_number',
                     'room_type',
                     'floor',
