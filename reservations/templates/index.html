@@ -54,17 +54,30 @@
                     <div class="card mb-4" style="width: 20rem">
                         <div class="card-body">
                             <div class="card" style="width: 18rem;">
-                                {% if "placeholder" in room.room_image.url %}
-                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                                    alt="placeholder image">
+                                {% if "Basic" in room.room_type %}
+                                <img class="card-img-top" src="{% static 'images/basic_room/basicroom_1.jpg' %}"
+                                    alt="basic room image">
+                                {% elif "Premium" in room.room_type %}
+                                <img class="card-img-top" src="{% static 'images/premium_room/premiumroom_1.jpg' %}"
+                                    alt="premium room image">
+                                {% elif "Executive" in room.room_type %}
+                                <img class="card-img-top" src="{% static 'images/executive_room/executiveroom_1.jpg' %}"
+                                    alt="executive room image">
                                 {% else %}
-                                <img src="{{ room.room_image.url }}" class="scale" alt="{{ post.title }}">
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                alt="placeholder image">
                                 {% endif %}
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ room.room_type }}</h5>
                                 <h6 class="card-title">{{ room.bed_type }}...{{ room.room_number }}</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                {% if "Basic" in room.room_type %}
+                                <p class="card-text">Sleep in safety, life on the road doesn't need to be rough. Our basic rooms will keep you sleeping sound.</p>
+                                {% elif "Premium" in room.room_type %}
+                                <p class="card-text">Sleep in a cloud, enjoy our premium rooms for your best nights sleep. Access to the pool is included</p>
+                                {% elif "Executive" in room.room_type %}
+                                <p class="card-text">For the most discerning guests, our exectuive rooms will have you sleeping in complete comfort along with all the amenities the hotel has to offer.</p>
+                                {% endif %}
                                 <a href="{% url 'room_detail' room.room_number %}" class="btn btn-primary">Book This Room!</a>
                             </div>
                         </div>
@@ -75,12 +88,11 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
 {% block copyright %}
-    Copyright 2023 Corey Davidson
+    2024 Created by Corey Davidson
 {% endblock %}
