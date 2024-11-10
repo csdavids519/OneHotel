@@ -10,9 +10,9 @@ class Room(models.Model):
     )
 
     BED_TYPE = (
-        ('Single','Single Bed'),
-        ('Double','Double Bed'),
-        ('Queen','Queen Bed'),
+        ('Single Bed','Single'),
+        ('Double Bed','Double'),
+        ('Queen Bed','Queen'),
     )
 
     VIEW = (

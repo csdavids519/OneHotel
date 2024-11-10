@@ -69,14 +69,23 @@
                                 {% endif %}
                             </div>
                             <div class="card-body">
+                                <!-- Room types -->
                                 <h5 class="card-title">{{ room.room_type }}</h5>
-                                <h6 class="card-title">{{ room.bed_type }}...{{ room.room_number }}</h6>
+                                <h6 class="card-title">{{ room.bed_type }}</h6>
                                 {% if "Basic" in room.room_type %}
                                 <p class="card-text">Sleep in safety, life on the road doesn't need to be rough. Our basic rooms will keep you sleeping sound.</p>
                                 {% elif "Premium" in room.room_type %}
                                 <p class="card-text">Sleep in a cloud, enjoy our premium rooms for your best nights sleep. Access to the pool is included</p>
                                 {% elif "Executive" in room.room_type %}
                                 <p class="card-text">For the most discerning guests, our exectuive rooms will have you sleeping in complete comfort along with all the amenities the hotel has to offer.</p>
+                                {% endif %} 
+                                <!-- bed types -->
+                                {% if "Single" in room.bed_type %}
+                                <p class="card-text">Single bed, fit for the solo traveler.</p>
+                                {% elif "Double" in room.bed_type %}
+                                <p class="card-text">Double bed, fit for the traveling couple.</p>
+                                {% elif "Queen" in room.bed_type %}
+                                <p class="card-text">Queen bed, for thoes who enjoy the extra space.</p>
                                 {% endif %}
                                 <a href="{% url 'room_detail' room.room_number %}" class="btn btn-primary">Book This Room!</a>
                             </div>
