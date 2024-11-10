@@ -3,51 +3,33 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="mx-auto p-2" style="width: 60%v;">
+    <div class="mx-auto p-2" style="width: 80vw;">
         <div class="card ">
             <div class="card-body border border-5 rounded-3">
-                <div class="card-header">{{ room_type }}</div>
-                <div class="card">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="{% static 'images/basic_room/basicroom_1.jpg' %}" class="d-block w-100" alt="...">
                         </div>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="{% static 'images/basic_room/basicroom_1.jpg' %}" class="d-block w-100" alt="...">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="{% static 'images/basic_room/basicroom_2.jpg' %}" class="d-block w-100" alt="...">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="{% static 'images/basic_room/basicroom_3.jpg' %}" class="d-block w-100" alt="...">
-                          </div>
+                        <div class="carousel-item">
+                          <img src="{% static 'images/basic_room/basicroom_2.jpg' %}" class="d-block w-100" alt="...">
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                        <!-- end carousel div -->
-                        <div class="p-3">
-                            <div class="row">
-                                <div class="col">
-                                    <ul class="list-unstyled">
-                                        <li>Number: {{ room_number }}</li>
-                                        <li>Floor: {{ floor }}</li>
-                                        <li>bed_type: {{ bed_type }}</li>
-                                        <li>view: {{ view }}</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="carousel-item">
+                          <img src="{% static 'images/basic_room/basicroom_3.jpg' %}" class="d-block w-100" alt="...">
                         </div>
+                      </div>
                     </div>
-                </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h2 class="card-header">{{ room_type }} Room</h2>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-body-secondary">Room number: {{ room_number }}  |  Floor: {{ floor }}  |  Bed type: {{ bed_type }}  |  View: {{ view }}</small></p>
+                    </div>
+                  </div>
+                </div>                 
             </div>
         <!-- end div card class -->
         </div>
@@ -56,24 +38,24 @@
     <!-- Add inputs for user -->
     <div class="p-5">
         <div class="row">
-            <div class="col">
+            <div class="col pt-3">
                 <div class="input-group flex-nowrap">
                     <input type="text" class="form-control" placeholder="First Name" aria-label="FirstName" aria-describedby="input users first name">
                 </div>
             </div>
-                <div class="col">
+                <div class="col pt-3">
                     <div class="input-group flex-nowrap">
                         <input type="text" class="form-control" placeholder="Last Name" aria-label="LastName" aria-describedby="input users last name">
                     </div>
                 </div>
             </div>
             <div class="row">   
-                <div class="col">
+                <div class="col pt-3">
                     <div class="input-group flex-nowrap">
                         <input type="date" class="form-control" placeholder="First Name" aria-label="FirstName" aria-describedby="input users first name">
                     </div>
                 </div>
-                <div class="col">
+                <div class="col pt-3">
                     <div class="input-group flex-nowrap">
                         <input type="date" class="form-control" placeholder="Last Name" aria-label="LastName" aria-describedby="input users last name">
                     </div>
