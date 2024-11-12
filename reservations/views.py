@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Room
+from .models import Room, Booking, Customer
+from .forms import BookingForum
+from django.contrib.auth.models import User
+
+import string, random
 
 # Create your views here.
 # ref Matt Freire
@@ -18,7 +22,8 @@ def FilterList(request):
         qs = Room.objects.all()
 
     # debug
-    print('room query:',room_type_query, 'bed query:',bed_type_query,
+    print('room query:',room_type_query,
+          'bed query:',bed_type_query,
           'view query:', view_type_query
     )
 
@@ -45,7 +50,11 @@ def FilterList(request):
 
     return render(request, "index.html", context)
 
-
+# https://stackoverflow.com/questions/2257441/random-string-generation-with-upper-case-letters-and-digits
+def create_booking_code():
+    booking_code = ''.join(random.choices(string.ascii_letters, k=5))
+    print(booking_code)
+    return booking_code
 
 
 def room_detail(request, room_number):
@@ -55,6 +64,22 @@ def room_detail(request, room_number):
     floor = room.floor
     bed_type = room.bed_type
     view =room.view
+    booking_form = BookingForum
+
+
+    if request.method == "POST":
+        booking_form = BookingForum(data=request.POST)
+        # Booking.booking_code = create_booking_code()
+        # booking_form.booking_code = create_booking_code()
+        
+        if booking_form.is_valid():
+            booking = booking_form.save(commit=False)
+            booking.booking_code = create_booking_code()
+            booking.user_name = request.user
+            booking.room_number = room_number
+            booking_form.save()
+            # messages.add_message(request, messages.SUCCESS, "Collaboration request received! I endeavour to respond within 2 working days.")
+   
 
     return render(
         request, "room_detail.html",
@@ -64,6 +89,6 @@ def room_detail(request, room_number):
             'floor': floor,
             'bed_type': bed_type,
             'view': view,
-
+            'booking_form': booking_form,
         }
     )
