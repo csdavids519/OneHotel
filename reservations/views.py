@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.views import generic
 from .models import Room, Booking, Customer
-from .forms import BookingForum
+from .forms import BookingForm
 from django.contrib.auth.models import User
 
 import string, random
@@ -62,10 +62,10 @@ def room_detail(request, room_number):
     floor = room.floor
     bed_type = room.bed_type
     view =room.view
-    booking_form = BookingForum
+    booking_form = BookingForm
 
     if request.method == "POST":
-        booking_form = BookingForum(data=request.POST)
+        booking_form = BookingForm(data=request.POST)
 
         if booking_form.is_valid():
             booking = booking_form.save(commit=False)
@@ -91,3 +91,13 @@ def UserBookings(request):
     queryset = Booking.objects.filter(user_name=request.user)
     print(queryset)
     return render(request, "user_bookings.html", {'booking': queryset})
+
+
+def booking_edit(request, booking_code):
+    booking = get_object_or_404(Booking, booking_code=booking_code, user_name=request.user)
+
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('user_bookings')

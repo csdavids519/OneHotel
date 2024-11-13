@@ -2,7 +2,7 @@ from .models import Booking
 from django import forms
 
 
-class BookingForum(forms.ModelForm):
+class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = ('reserved_start_date', 'reserved_end_date',)
