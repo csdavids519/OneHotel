@@ -3,7 +3,6 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Customer)
-admin.site.register(Booking)
 
 @admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
@@ -20,6 +19,16 @@ class RoomAdmin(admin.ModelAdmin):
                     'bed_type',]
     show_facets = admin.ShowFacets.ALWAYS
 
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
+    list_display = ['booking_code',
+                    'room_number',
+                    'user_name',]
+    
+    list_filter = ['booking_code',
+                    'room_number',
+                    'user_name',]
+    show_facets = admin.ShowFacets.ALWAYS
 
 
 

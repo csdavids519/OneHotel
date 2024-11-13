@@ -44,10 +44,9 @@ class Customer(models.Model):
 
 class Booking(models.Model):
     booking_code = models.CharField(max_length=5, blank=True, null=True, unique=True)
-    reserved_start_date = models.DateField(null=True, blank=True, )
-    reserved_end_date = models.DateField(null=True, blank=True, )
+    reserved_start_date = models.DateField(null=True, blank=True)
+    reserved_end_date = models.DateField(null=True, blank=True)
     room_number = models.IntegerField(blank=True, null=True)
-    customer_number = models.IntegerField(blank=True, null=True)
     user_name = models.CharField(blank=True, null=True)
 
     def __str__(self):

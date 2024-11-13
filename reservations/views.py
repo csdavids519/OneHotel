@@ -27,13 +27,11 @@ def FilterList(request):
           'view query:', view_type_query
     )
 
-
     if room_type_query != "Any":
         qs = qs.filter(room_type=room_type_query)
         # debug
         print('room:',qs)
 
- 
     if bed_type_query != "Any":
         qs = qs.filter(bed_type=bed_type_query)
         # debug
@@ -52,10 +50,9 @@ def FilterList(request):
 
 # https://stackoverflow.com/questions/2257441/random-string-generation-with-upper-case-letters-and-digits
 def create_booking_code():
-    booking_code = ''.join(random.choices(string.ascii_letters, k=5))
+    booking_code = ''.join(random.choices(string.ascii_uppercase, k=5))
     print(booking_code)
     return booking_code
-
 
 def room_detail(request, room_number):
     qs = Room.objects.all()
@@ -66,12 +63,9 @@ def room_detail(request, room_number):
     view =room.view
     booking_form = BookingForum
 
-
     if request.method == "POST":
         booking_form = BookingForum(data=request.POST)
-        # Booking.booking_code = create_booking_code()
-        # booking_form.booking_code = create_booking_code()
-        
+
         if booking_form.is_valid():
             booking = booking_form.save(commit=False)
             booking.booking_code = create_booking_code()
@@ -80,7 +74,6 @@ def room_detail(request, room_number):
             booking_form.save()
             # messages.add_message(request, messages.SUCCESS, "Collaboration request received! I endeavour to respond within 2 working days.")
    
-
     return render(
         request, "room_detail.html",
         {
