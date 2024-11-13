@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<!-- index.html content starts here -->
+<!-- room search bar -->
+
+<h2>Edit boooking for {{ user }}</h2>
+
+<!-- search results -->
+<hr />
+<div class="container">
+  <form method="POST">
+    {% csrf_token %} {{ form.as_p }}
+
+    <button type="submit" class="btn btn-primary">Update Booking</button>
+  </form>
+
+  <a href="{% url 'user_booking' %}" class="btn btn-secondary"
+    >Back to Bookings
+  </a>
+  {% endblock %}
+</div>
