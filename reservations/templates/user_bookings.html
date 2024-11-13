@@ -7,89 +7,24 @@
 
 <!-- search results -->
 <hr />
-
 <div class="container">
+  {% if booking %}
+
   <div class="row">
     <!-- Blog Entries Column -->
     <div class="col-12 mt-3 left">
-      <div class="row">
-        {% for room in queryset %}
-        <div class="col">
-          <div class="card mb-4" style="width: 20rem">
-            <div class="card-body">
-              <div class="card" style="width: 18rem">
-                {% if "Basic" in room.room_type %}
-                <img
-                  class="card-img-top"
-                  src="{% static 'images/basic_room/basicroom_1.jpg' %}"
-                  alt="basic room image"
-                />
-                {% elif "Premium" in room.room_type %}
-                <img
-                  class="card-img-top"
-                  src="{% static 'images/premium_room/premiumroom_1.jpg' %}"
-                  alt="premium room image"
-                />
-                {% elif "Executive" in room.room_type %}
-                <img
-                  class="card-img-top"
-                  src="{% static 'images/executive_room/executiveroom_1.jpg' %}"
-                  alt="executive room image"
-                />
-                {% else %}
-                <img
-                  class="card-img-top"
-                  src="{% static 'images/default.jpg' %}"
-                  alt="placeholder image"
-                />
-                {% endif %}
-              </div>
-              <div class="card-body">
-                <!-- Room types -->
-                <h5 class="card-title">{{ room.room_type }}</h5>
-                <h6 class="card-title">{{ room.bed_type }}</h6>
-                {% if "Basic" in room.room_type %}
-                <p class="card-text">
-                  Sleep in safety, life on the road doesn't need to be rough.
-                  Our basic rooms will keep you sleeping sound.
-                </p>
-                {% elif "Premium" in room.room_type %}
-                <p class="card-text">
-                  Sleep in a cloud, enjoy our premium rooms for your best nights
-                  sleep. Access to the pool is included
-                </p>
-                {% elif "Executive" in room.room_type %}
-                <p class="card-text">
-                  For the most discerning guests, our exectuive rooms will have
-                  you sleeping in complete comfort along with all the amenities
-                  the hotel has to offer.
-                </p>
-                {% endif %}
-                <!-- bed types -->
-                {% if "Single" in room.bed_type %}
-                <p class="card-text">Single bed, fit for the solo traveler.</p>
-                {% elif "Double" in room.bed_type %}
-                <p class="card-text">
-                  Double bed, fit for the traveling couple.
-                </p>
-                {% elif "Queen" in room.bed_type %}
-                <p class="card-text">
-                  Queen bed, for thoes who enjoy the extra space.
-                </p>
-                {% endif %}
-                <a
-                  href="{% url 'room_detail' room.room_number %}"
-                  class="btn btn-primary"
-                  >Book This Room!</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        {% if forloop.counter|divisibleby:3 %}
-      </div>
-      <div class="row">{% endif %} {% endfor %}</div>
+      {% for item in booking %}
+      <ul>
+        <li>Customer Name: {{ item.user_name }}</li>
+        <li>Booking Code: {{ item.booking_code }}</li>
+        <li>Room Number: {{ item.room_number }}</li>
+        <li>Reserved Start Date: {{ item.reserved_start_date }}</li>
+        <li>Reserved End Date: {{ item.reserved_end_date }}</li>
+      </ul>
+      {% endfor %} {% else %}
+      <h3 class="text-muted">Nothing to see here, make a booking with us!</h3>
     </div>
   </div>
+  {% endif %}
 </div>
 {% endblock %}

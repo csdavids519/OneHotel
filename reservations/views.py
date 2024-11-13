@@ -88,6 +88,6 @@ def room_detail(request, room_number):
     )
 
 def UserBookings(request):
-    qs = Booking.objects.filter(user_name=request.user)
-
-    return render(request, "user_bookings.html", {'bookings': qs})
+    queryset = Booking.objects.filter(user_name=request.user)
+    print(queryset)
+    return render(request, "user_bookings.html", {'booking': queryset})
