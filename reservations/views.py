@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 from django.views import generic
 from .models import Room, Booking, Customer
 from .forms import BookingForum
@@ -72,7 +73,7 @@ def room_detail(request, room_number):
             booking.user_name = request.user
             booking.room_number = room_number
             booking_form.save()
-            # messages.add_message(request, messages.SUCCESS, "Collaboration request received! I endeavour to respond within 2 working days.")
+            messages.add_message(request, messages.SUCCESS, "SUCCESS! your booking request has been submitted.")
    
     return render(
         request, "room_detail.html",

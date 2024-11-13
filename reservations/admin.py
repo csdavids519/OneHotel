@@ -25,7 +25,7 @@ class BookingAdmin(admin.ModelAdmin):
                     'room_number',
                     'user_name',]
     
-    list_filter = ['booking_code',
+    list_filter = [
                     'room_number',
                     'user_name',]
     show_facets = admin.ShowFacets.ALWAYS
