@@ -73,7 +73,7 @@ def room_detail(request, room_number):
             booking.user_name = request.user
             booking.room_number = room_number
             booking_form.save()
-            messages.add_message(request, messages.SUCCESS, "SUCCESS! your booking request has been submitted.")
+            messages.add_message(request, messages.SUCCESS, "SUCCESS! Your booking request has been submitted.")
    
     return render(
         request, "room_detail.html",
@@ -86,3 +86,8 @@ def room_detail(request, room_number):
             'booking_form': booking_form,
         }
     )
+
+def UserBookings(request):
+    qs = Booking.objects.filter(user_name=request.user)
+
+    return render(request, "user_bookings.html", {'bookings': qs})

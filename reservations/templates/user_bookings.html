@@ -3,52 +3,7 @@
 <!-- index.html content starts here -->
 <!-- room search bar -->
 
-<h2>Find the room for you</h2>
-<form method="GET" action=".">
-  <div class="row">
-    <div class="col">
-      <select
-        id="category"
-        class="form-control"
-        name="room_type"
-        aria-placeholder="Room Type"
-      >
-        <option value="Any" selected>Any room type</option>
-        <option value="Basic">Basic</option>
-        <option value="Premium">Premium</option>
-        <option value="Executive">Executive</option>
-      </select>
-    </div>
-    <div class="col">
-      <select
-        id="category"
-        class="form-control"
-        name="bed_type"
-        aria-placeholder="Bed Type"
-      >
-        <option value="Any" selected>Any bed type</option>
-        <option value="Single">Single Bed</option>
-        <option value="Double">Double Bed</option>
-        <option value="Queen">Queen Bed</option>
-      </select>
-    </div>
-    <div class="col">
-      <select
-        id="category"
-        class="form-control"
-        name="view_type"
-        aria-placeholder="View Options"
-      >
-        <option value="Any" selected>Any View</option>
-        <option value="City">City</option>
-        <option value="Ocean">Ocean</option>
-      </select>
-    </div>
-    <div class="col">
-      <button type="submit" class="btn btn-primary">Search</button>
-    </div>
-  </div>
-</form>
+<h2>Boooking status for {{ user }}</h2>
 
 <!-- search results -->
 <hr />
