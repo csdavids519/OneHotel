@@ -10,21 +10,30 @@
 <div class="container">
   {% if booking %}
 
-  <div class="row">
-    <!-- Blog Entries Column -->
-    <div class="col-12 mt-3 left">
-      {% for item in booking %}
-      <ul>
-        <li>Customer Name: {{ item.user_name }}</li>
-        <li>Booking Code: {{ item.booking_code }}</li>
-        <li>Room Number: {{ item.room_number }}</li>
-        <li>Reserved Start Date: {{ item.reserved_start_date }}</li>
-        <li>Reserved End Date: {{ item.reserved_end_date }}</li>
-      </ul>
-      {% endfor %} {% else %}
-      <h3 class="text-muted">Nothing to see here, make a booking with us!</h3>
-    </div>
-  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Booking Code</th>
+        <th class="text-center" scope="col">User Name</th>
+        <th class="text-center" scope="col">Room Number</th>
+        <th class="text-center" scope="col">Start Date</th>
+        <th class="text-center" scope="col">End Date</th>
+        <th class="text-center" scope="col"></th>
+      </tr>
+    </thred>
+    {% for item in booking %}
+    <tbody>
+      <tr>
+        <th scope="row">{{ item.booking_code }}</th>
+        <td class="text-center">{{ item.user_name }}</td>
+        <td class="text-center">{{ item.room_number }}</td>
+        <td class="text-center">{{ item.reserved_start_date }}</td>
+        <td class="text-center">{{ item.reserved_end_date }}</td>
+        <td class="text-center"><a href="#" class="btn btn-secondary">Edit</a></td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
   {% endif %}
 </div>
 {% endblock %}
