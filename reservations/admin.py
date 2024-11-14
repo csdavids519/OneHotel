@@ -11,7 +11,7 @@ class RoomAdmin(admin.ModelAdmin):
                     'floor',
                     'bed_type',
                     'view',
-                    'room_image',]
+                    ]
     
     list_filter = ['room_number',
                     'room_type',

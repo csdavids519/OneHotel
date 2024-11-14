@@ -21,8 +21,8 @@
         <th class="text-center" scope="col">Status</th>
         <th class="text-center" scope="col"></th>
       </tr>
-    </thred>
-    {% for item in booking %}
+      </thred>
+      {% for item in booking %}
     <tbody>
       <tr>
         <th scope="row">{{ item.booking_code }}</th>
@@ -30,7 +30,7 @@
         <td class="text-center">{{ item.room_number }}</td>
         <td class="text-center">{{ item.reserved_start_date }}</td>
         <td class="text-center">{{ item.reserved_end_date }}</td>
-        <!-- <td class="text-center">{{ item.approved }}</td> -->
+        <td class="text-center">{{ item.approved }}</td>
         <td class="text-center"><a href="/edit/{{ item.booking_code }}" class="btn btn-secondary">Edit</a></td>
       </tr>
     </tbody>
