@@ -23,11 +23,11 @@ class RoomAdmin(admin.ModelAdmin):
 class BookingAdmin(admin.ModelAdmin):
     list_display = ['booking_code',
                     'room_number',
-                    'user_name',]
+                    ]
     
     list_filter = [
                     'room_number',
-                    'user_name',]
+                ]
     show_facets = admin.ShowFacets.ALWAYS
 
 

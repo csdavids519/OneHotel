@@ -3,7 +3,8 @@
 <!-- index.html content starts here -->
 <!-- room search bar -->
 
-<h2>Edit boooking for {{ user }}</h2>
+<h2>Edit booking for {{ user }}</h2>
+<p>booking code: {{ booking.booking_code }}</p>
 
 <!-- search results -->
 <hr />
@@ -14,8 +15,9 @@
     <button type="submit" class="btn btn-primary">Update Booking</button>
   </form>
 
-  <a href="{% url 'user_booking' %}" class="btn btn-secondary"
-    >Back to Bookings
-  </a>
+  <div class="mt-3">
+    <a href="{% url 'user_booking' %}" class="btn btn-secondary">Back to Bookings
+    </a>
+  </div>
   {% endblock %}
 </div>
