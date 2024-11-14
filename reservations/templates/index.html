@@ -37,7 +37,7 @@
 
 <!-- search results -->
 <hr />
-
+{% if queryset %}
 <div class="container">
   <div class="row">
     <!-- Blog Entries Column -->
@@ -112,4 +112,9 @@
     </div>
   </div>
 </div>
+{% else %}
+<div class="d-flex justify-content-center">
+  <p class="display-6 text-muted">Nothing to see here, make a new search</p>
+</div>
+{% endif %}
 {% endblock %}
