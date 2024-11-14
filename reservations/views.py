@@ -72,8 +72,9 @@ def room_detail(request, room_number):
             booking.booking_code = create_booking_code()
             booking.user_name = request.user
             booking.room_number = room_number
+            booking.room_info = room
             booking_form.save()
-            messages.add_message(request, messages.SUCCESS, "SUCCESS! Your booking request has been submitted for approval.")
+            messages.add_message(request, messages.SUCCESS, f"SUCCESS! Your booking request has been submitted for approval. Booking code: {booking.booking_code}")
    
     return render(
         request, "room_detail.html",

@@ -53,6 +53,8 @@ class Booking(models.Model):
     room_number = models.IntegerField(blank=True, null=True)
     user_name = models.CharField(blank=True, null=True)
     status = models.CharField( default='In Review', choices=STATUS)
+    room_info = models.ForeignKey(Room, on_delete=models.DO_NOTHING, related_name='bookings', null=True, blank=True)
+
 
     def __str__(self):
         return str(self.booking_code)

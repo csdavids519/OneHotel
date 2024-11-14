@@ -16,6 +16,9 @@
         <th scope="col">Booking Code</th>
         <th class="text-center" scope="col">User Name</th>
         <th class="text-center" scope="col">Room Number</th>
+        <th class="text-center" scope="col">Room Type</th>
+        <th class="text-center" scope="col">View</th>
+        <th class="text-center" scope="col">Bed Type</th>
         <th class="text-center" scope="col">Start Date</th>
         <th class="text-center" scope="col">End Date</th>
         <th class="text-center" scope="col">Status</th>
@@ -28,6 +31,9 @@
         <th scope="row">{{ item.booking_code }}</th>
         <td class="text-center">{{ item.user_name }}</td>
         <td class="text-center">{{ item.room_number }}</td>
+        <td class="text-center">{{ item.room_info.room_type }}</td>
+        <td class="text-center">{{ item.room_info.view }}</td>
+        <td class="text-center">{{ item.room_info.bed_type }}</td>
         <td class="text-center">{{ item.reserved_start_date }}</td>
         <td class="text-center">{{ item.reserved_end_date }}</td>
         <td class="text-center">{{ item.status }}</td>
