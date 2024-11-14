@@ -22,7 +22,9 @@ class RoomAdmin(admin.ModelAdmin):
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
     list_display = ['booking_code',
+                    'user_name',
                     'room_number',
+                    'status',
                     ]
     
     list_filter = [
