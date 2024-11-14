@@ -99,6 +99,14 @@
                   Queen bed, for thoes who enjoy the extra space.
                 </p>
                 {% endif %}
+                <!-- view type -->
+                {% if "City" in room.view %}
+                <p class="card-text">City view, view the action of the beautiful city directly from your window.</p>
+                {% elif "Ocean" in room.bed_type %}
+                <p class="card-text">
+                  Ocean view, relax and listen to the waves at night with the ocean directly out your window.
+                </p>
+                {% endif %}
                 <div class="d-flex justify-content-center">
                   <a href="{% url 'room_detail' room.room_number %}" class="btn btn-primary">Book This Room!</a>
                 </div>
