@@ -31,7 +31,6 @@ class Room(models.Model):
         return str(self.room_number)
 
 
-
 class Booking(models.Model):
     STATUS = (
         ('APPROVED','APPROVED'),
