@@ -5,7 +5,7 @@
             "room_number": 1,
             "room_type": "Basic",
             "floor": 1,
-            "bed_type": "Double",
+            "bed_type": "Single",
             "view": "Ocean"
         }
     },
@@ -13,9 +13,9 @@
         "model": "reservations.room",
         "fields": {
             "room_number": 2,
-            "room_type": "Premium",
+            "room_type": "Basic",
             "floor": 1,
-            "bed_type": "Double",
+            "bed_type": "Single",
             "view": "City"
         }
     },
@@ -33,9 +33,9 @@
         "model": "reservations.room",
         "fields": {
             "room_number": 4,
-            "room_type": "Premium",
+            "room_type": "Basic",
             "floor": 1,
-            "bed_type": "Single",
+            "bed_type": "Double",
             "view": "City"
         }
     },
@@ -45,7 +45,7 @@
             "room_number": 5,
             "room_type": "Basic",
             "floor": 1,
-            "bed_type": "Single",
+            "bed_type": "Queen",
             "view": "Ocean"
         }
     },
@@ -53,9 +53,9 @@
         "model": "reservations.room",
         "fields": {
             "room_number": 6,
-            "room_type": "Premium",
-            "floor": 2,
-            "bed_type": "Single",
+            "room_type": "Basic",
+            "floor": 1,
+            "bed_type": "Queen",
             "view": "City"
         }
     },
@@ -63,9 +63,9 @@
         "model": "reservations.room",
         "fields": {
             "room_number": 7,
-            "room_type": "Basic",
+            "room_type": "Premium",
             "floor": 2,
-            "bed_type": "Double",
+            "bed_type": "Single",
             "view": "Ocean"
         }
     },
@@ -75,7 +75,7 @@
             "room_number": 8,
             "room_type": "Premium",
             "floor": 2,
-            "bed_type": "Double",
+            "bed_type": "Single",
             "view": "City"
         }
     },
@@ -83,7 +83,7 @@
         "model": "reservations.room",
         "fields": {
             "room_number": 9,
-            "room_type": "Basic",
+            "room_type": "Premium",
             "floor": 2,
             "bed_type": "Double",
             "view": "Ocean"
@@ -95,7 +95,7 @@
             "room_number": 10,
             "room_type": "Premium",
             "floor": 2,
-            "bed_type": "Single",
+            "bed_type": "Double",
             "view": "City"
         }
     },
@@ -103,9 +103,9 @@
         "model": "reservations.room",
         "fields": {
             "room_number": 11,
-            "room_type": "Basic",
-            "floor": 3,
-            "bed_type": "Single",
+            "room_type": "Premium",
+            "floor": 2,
+            "bed_type": "Queen",
             "view": "Ocean"
         }
     },
@@ -114,8 +114,8 @@
         "fields": {
             "room_number": 12,
             "room_type": "Premium",
-            "floor": 3,
-            "bed_type": "Single",
+            "floor": 2,
+            "bed_type": "Queen",
             "view": "City"
         }
     },
@@ -123,9 +123,9 @@
         "model": "reservations.room",
         "fields": {
             "room_number": 13,
-            "room_type": "Basic",
+            "room_type": "Executive",
             "floor": 3,
-            "bed_type": "Double",
+            "bed_type": "Single",
             "view": "Ocean"
         }
     },
@@ -133,17 +133,27 @@
         "model": "reservations.room",
         "fields": {
             "room_number": 14,
-            "room_type": "Premium",
+            "room_type": "Executive",
             "floor": 3,
-            "bed_type": "Queen",
-            "view": "Ocean"
+            "bed_type": "Single",
+            "view": "City"
         }
     },
     {
         "model": "reservations.room",
         "fields": {
             "room_number": 15,
-            "room_type": "Basic",
+            "room_type": "Executive",
+            "floor": 3,
+            "bed_type": "Double",
+            "view": "Ocean"
+        }
+    },
+    {
+        "model": "reservations.room",
+        "fields": {
+            "room_number": 16,
+            "room_type": "Executive",
             "floor": 3,
             "bed_type": "Double",
             "view": "City"
@@ -152,150 +162,40 @@
     {
         "model": "reservations.room",
         "fields": {
-            "room_number": 16,
-            "room_type": "Premium",
-            "floor": 4,
+            "room_number": 17,
+            "room_type": "Executive",
+            "floor": 3,
             "bed_type": "Queen",
             "view": "Ocean"
-        }
-    },
-    {
-        "model": "reservations.room",
-        "fields": {
-            "room_number": 17,
-            "room_type": "Basic",
-            "floor": 4,
-            "bed_type": "Double",
-            "view": "City"
         }
     },
     {
         "model": "reservations.room",
         "fields": {
             "room_number": 18,
-            "room_type": "Premium",
-            "floor": 4,
+            "room_type": "Executive",
+            "floor": 3,
             "bed_type": "Queen",
-            "view": "Ocean"
+            "view": "City"
         }
     },
     {
         "model": "reservations.room",
         "fields": {
             "room_number": 19,
-            "room_type": "Basic",
-            "floor": 4,
-            "bed_type": "Double",
-            "view": "City"
+            "room_type": "Executive",
+            "floor": 3,
+            "bed_type": "Queen",
+            "view": "Ocean"
         }
     },
     {
         "model": "reservations.room",
         "fields": {
             "room_number": 20,
-            "room_type": "Premium",
-            "floor": 4,
-            "bed_type": "Queen",
-            "view": "Ocean"
-        }
-    },
-    {
-        "model": "reservations.room",
-        "fields": {
-            "room_number": 21,
-            "room_type": "Basic",
-            "floor": 5,
-            "bed_type": "Double",
-            "view": "City"
-        }
-    },
-    {
-        "model": "reservations.room",
-        "fields": {
-            "room_number": 22,
-            "room_type": "Premium",
-            "floor": 5,
-            "bed_type": "Queen",
-            "view": "Ocean"
-        }
-    },
-    {
-        "model": "reservations.room",
-        "fields": {
-            "room_number": 23,
-            "room_type": "Basic",
-            "floor": 5,
-            "bed_type": "Double",
-            "view": "City"
-        }
-    },
-    {
-        "model": "reservations.room",
-        "fields": {
-            "room_number": 24,
-            "room_type": "Premium",
-            "floor": 5,
-            "bed_type": "Queen",
-            "view": "City"
-        }
-    },
-    {
-        "model": "reservations.room",
-        "fields": {
-            "room_number": 25,
-            "room_type": "Basic",
-            "floor": 5,
-            "bed_type": "Single",
-            "view": "Ocean"
-        }
-    },
-    {
-        "model": "reservations.room",
-        "fields": {
-            "room_number": 26,
             "room_type": "Executive",
-            "floor": 6,
-            "bed_type": "Single",
-            "view": "Ocean"
-        }
-    },
-    {
-        "model": "reservations.room",
-        "fields": {
-            "room_number": 27,
-            "room_type": "Executive",
-            "floor": 6,
+            "floor": 3,
             "bed_type": "Queen",
-            "view": "Ocean"
-        }
-    },
-    {
-        "model": "reservations.room",
-        "fields": {
-            "room_number": 28,
-            "room_type": "Executive",
-            "floor": 6,
-            "bed_type": "Queen",
-            "view": "Ocean"
-        }
-    },
-    {
-        "model": "reservations.room",
-        "fields": {
-            "room_number": 29,
-            "room_type": "Executive",
-            "floor": 6,
-            "bed_type": "Double",
-            "view": "Ocean"
-        }
-    },
-    {
-        "model": "reservations.room",
-        "fields": {
-            "room_number": 30,
-            "room_type": "Executive",
-            "floor": 6,
-            "bed_type": "Double",
             "view": "Ocean"
         }
     }
