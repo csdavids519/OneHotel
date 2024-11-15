@@ -39,7 +39,10 @@
         <td class="text-center">{{ item.reserved_end_date }}</td>
         <td class="text-center">{{ item.status }}</td>
         <td class="text-center"><a href="/edit/{{ item.booking_code }}" class="btn btn-secondary">Edit</a></td>
-        <td class="text-center"><a href="#" class="btn btn-secondary">Delete</a></td>
+        <td class="text-center"> <a href="{% url 'delete_booking' item.booking_code %}" class="btn btn-secondary"
+            onclick="return confirm('Are you sure you want to delete this booking?');">
+            Delete
+          </a>
       </tr>
     </tbody>
     {% endfor %}
