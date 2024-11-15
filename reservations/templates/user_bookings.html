@@ -23,6 +23,7 @@
         <th class="text-center" scope="col">End Date</th>
         <th class="text-center" scope="col">Status</th>
         <th class="text-center" scope="col"></th>
+        <th class="text-center" scope="col"></th>
       </tr>
       </thred>
       {% for item in booking %}
@@ -38,6 +39,7 @@
         <td class="text-center">{{ item.reserved_end_date }}</td>
         <td class="text-center">{{ item.status }}</td>
         <td class="text-center"><a href="/edit/{{ item.booking_code }}" class="btn btn-secondary">Edit</a></td>
+        <td class="text-center"><a href="#" class="btn btn-secondary">Delete</a></td>
       </tr>
     </tbody>
     {% endfor %}
