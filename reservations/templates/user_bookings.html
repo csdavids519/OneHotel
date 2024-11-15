@@ -49,6 +49,9 @@
   </table>
   {% else %}
   <p class="display-6 text-muted">Nothing to see here, make a booking!</p>
+  <div class="d-flex justify-content-center">
+    <a href="{% url 'FilterList' %}" class="btn btn-secondary m-3">Back to Search</a>
+  </div>
   {% endif %}
 </div>
 {% endblock %}
