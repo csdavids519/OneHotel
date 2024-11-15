@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'cloudinary',
 
     # project apps
-    'home',
     'reservations',
 ]
 

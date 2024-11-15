@@ -45,7 +45,7 @@ def FilterList(request):
         'queryset': qs
     }
 
-    return render(request, "index.html", context)
+    return render(request, "room_search.html", context)
 
 # https://stackoverflow.com/questions/2257441/random-string-generation-with-upper-case-letters-and-digits
 def create_booking_code():
