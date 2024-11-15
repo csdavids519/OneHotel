@@ -1,9 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-from django.views import generic
 from .models import Room, Booking
 from .forms import BookingForm
-from django.contrib.auth.models import User
 
 import string, random
 
