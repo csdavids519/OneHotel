@@ -88,6 +88,7 @@ def room_detail(request, room_number):
         }
     )
 
+
 def UserBookings(request):
     queryset = Booking.objects.filter(user_name=request.user)
     print(queryset)
@@ -112,8 +113,10 @@ def booking_edit(request, booking_code):
 def delete_booking(request, booking_code):
     booking = get_object_or_404(Booking, booking_code=booking_code)
 
-    booking.delete()
+    if booking.status == 'APPROVED':
+        messages.add_message(request, messages.WARNING, "SORRY! Your booking is already approved, please contact support to cancel")
+    else:
+        booking.delete()
+        messages.add_message(request, messages.SUCCESS, "Your booking has been deleted")
 
-    messages.add_message(request, messages.SUCCESS, "Your booking has been deleted")
-
-    return render(request, 'user_bookings.html')
+    return redirect('user_booking')
