@@ -6,7 +6,7 @@
 <form method="GET" action=".">
   <div class="row">
     <div class="col">
-      <select id="category" class="form-control" name="room_type" aria-placeholder="Room Type">
+      <select class="form-control" name="room_type">
         <option value="Any" selected>Any room type</option>
         <option value="Basic">Basic</option>
         <option value="Premium">Premium</option>
@@ -14,7 +14,7 @@
       </select>
     </div>
     <div class="col">
-      <select id="category" class="form-control" name="bed_type" aria-placeholder="Bed Type">
+      <select class="form-control" name="bed_type">
         <option value="Any" selected>Any bed type</option>
         <option value="Single">Single Bed</option>
         <option value="Double">Double Bed</option>
@@ -22,7 +22,7 @@
       </select>
     </div>
     <div class="col">
-      <select id="category" class="form-control" name="view_type" aria-placeholder="View Options">
+      <select class="form-control" name="view_type">
         <option value="Any" selected>Any View</option>
         <option value="City">City</option>
         <option value="Ocean">Ocean</option>
@@ -35,7 +35,7 @@
 </form>
 
 <!-- search results -->
-<hr />
+<hr>
 {% if queryset %}
 <div class="container">
   <div class="row">
@@ -48,16 +48,15 @@
             <div class="card-body">
               <div class="card" style="width: 18rem">
                 {% if "Basic" in room.room_type %}
-                <img class="card-img-top" src="{% static 'images/basic_room/basicroom_1.jpg' %}"
-                  alt="basic room image" />
+                <img class="card-img-top" src="{% static 'images/basic_room/basicroom_1.jpg' %}" alt="basic room image">
                 {% elif "Premium" in room.room_type %}
                 <img class="card-img-top" src="{% static 'images/premium_room/premiumroom_1.jpg' %}"
-                  alt="premium room image" />
+                  alt="premium room image">
                 {% elif "Executive" in room.room_type %}
                 <img class="card-img-top" src="{% static 'images/executive_room/executiveroom_1.jpg' %}"
-                  alt="executive room image" />
+                  alt="executive room image">
                 {% else %}
-                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
+                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                 {% endif %}
               </div>
               <div class="card-body">
