@@ -9,8 +9,7 @@ class RoomAdmin(admin.ModelAdmin):
                     'room_type',
                     'floor',
                     'bed_type',
-                    'view',
-                    ]
+                    'view',]
     
     list_filter = ['room_number',
                     'room_type',
@@ -23,12 +22,10 @@ class BookingAdmin(admin.ModelAdmin):
     list_display = ['booking_code',
                     'user_name',
                     'room_number',
-                    'status',
-                    ]
+                    'status',]
     
     list_filter = [
-                    'room_number',
-                ]
+                    'room_number',]
     show_facets = admin.ShowFacets.ALWAYS
 
 
