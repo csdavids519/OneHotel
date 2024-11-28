@@ -9,7 +9,15 @@ This site is created with Django and runs PostgreSQL to manage a database of hot
 <!-- ![Responsive](documentation/images/amiresponsive.png) -->
 
 ## Deployment to GitHub Pages
-<!-- HEROKU -->
+
+This project was deployed with Heroku.
+
+Steps to deploy on Heroku:
+
+1. Create Heroku account
+2. Via settings tab ensure Config Vars is set as:
+    DISABLE_COLLECTSTATIC = 1
+3.
 
 ## Features
 
@@ -95,15 +103,15 @@ Once the desired room is found it is possible to make a request a booking.
 
 ### Light House Tests
 
-- See below for Chrome Light House test results on each web page.
+<!-- - See below for Chrome Light House test results on each web page. -->
 
 #### Index page
 
-![Light House Index](documentation/images/lighthouse_index.png)
+<!-- ![Light House Index](documentation/images/lighthouse_index.png) -->
 
 #### Game board page
 
-![Light House Game board](documentation/images/lighthouse_gameboard.png)
+<!-- ![Light House Game board](documentation/images/lighthouse_gameboard.png) -->
 
 ### Code Validation Tests
 
