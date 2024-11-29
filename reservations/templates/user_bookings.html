@@ -39,7 +39,7 @@
         <td class="text-center">{{ item.reserved_end_date }}</td>
         <td class="text-center">{{ item.status }}</td>
         <td class="text-center">
-          <a href="/edit/{{ item.booking_code }}" class="btn btn-secondary">Edit</a>
+          <a href="{% url 'edit_booking' item.booking_code %}" class="btn btn-secondary">Edit</a>
         </td>
         <td class="text-center">
           <a href="{% url 'delete_booking' item.booking_code %}" class="btn btn-secondary"
