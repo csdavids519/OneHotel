@@ -7,6 +7,8 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ('reserved_start_date', 'reserved_end_date',)
         widgets = {
-            'reserved_start_date': forms.DateInput(attrs={'required': 'required', 'type': 'date'}),
-            'reserved_end_date': forms.DateInput(attrs={'required': 'required', 'type': 'date'}),
+            'reserved_start_date':
+            forms.DateInput(attrs={'required': 'required', 'type': 'date'}),
+            'reserved_end_date':
+            forms.DateInput(attrs={'required': 'required', 'type': 'date'}),
         }

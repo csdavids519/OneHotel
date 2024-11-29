@@ -3,6 +3,7 @@ from .models import *
 
 # Register your models here.
 
+
 @admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
     list_display = ['room_number',
@@ -10,12 +11,13 @@ class RoomAdmin(admin.ModelAdmin):
                     'floor',
                     'bed_type',
                     'view',]
-    
+
     list_filter = ['room_number',
-                    'room_type',
-                    'floor',
-                    'bed_type',]
+                   'room_type',
+                   'floor',
+                   'bed_type',]
     show_facets = admin.ShowFacets.ALWAYS
+
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
@@ -23,12 +25,7 @@ class BookingAdmin(admin.ModelAdmin):
                     'user_name',
                     'room_number',
                     'status',]
-    
+
     list_filter = [
                     'room_number',]
     show_facets = admin.ShowFacets.ALWAYS
-
-
-
-
-
