@@ -120,68 +120,74 @@ Automatic tests of Hotel One will check the booking form fields are entered corr
 
 I have manually tested this project with the following tests:
 
-|                  Tests                  | Passed |                                           Comments                                           |
-|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
-| GENERAL SOFTWARE TESTS                                                                                                                          |
-|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
-| HTML validation                         |    X   | Passed Markup Validation Service without any errors not related to Django Template Language  |
-| CSS validation                          |    X   | Passed CSS Validation Service without errors                                                 |
-| Check code runs in local terminal       |    X   | One Hotel runs in local Python terminal                                                      |
-| Check code runs on Heroku               |    X   | One Hotel is deployed and running on Heroku                                                  |
-| Deployed version is latest main branch  |    X   | Deployed version is up to date                                                               |
-| Deployed version has DEBUG set to FALSE |    X   | Deployed version of Hotel One has debug value set FALSE                                      |
-| Automatic tests pass without errors     |    X   | All automatic tests pass                                                                     |
-| Automatic tests pass with out failures  |    X   | All automatic tests pass                                                                     |
-| Code comments are checked               |    X   | Code has correct comments on functions, no code is commented out                             |
-|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
-| HOME PAGE                                                                                                                                       |
-|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
-| All links are working                   |    X   | All links are connected to the correct url path                                              |
-| All buttons are working                 |    X   | All buttons preform the correct action                                                       |
-| All text is rendered correctly          |    X   | All text is clear and visible                                                                |
-| Page is responsive                      |    X   | Page responds to screen size                                                                 |
-| All images are loading                  |    X   | All images are loading correctly                                                             |
-|                                         |        |                                                                                              |
-|                                         |        |                                                                                              |
-|                                         |        |                                                                                              |
-|                                         |        |                                                                                              |
-|                                         |        |                                                                                              |
-|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
-| ROOM SEARCH PAGE                                                                                                                                |
-|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
-| All links are working                   |   X    | All links are connected to the correct url path                                              |
-| All buttons are working                 |   X    | All buttons preform the correct action                                                       |
-| All text is rendered correctly          |   X    | All text is clear and visible                                                                |
-| Page is responsive                      |   X    | Page responds to screen size                                                                 |
-| All images are loading                  |   X    | All images are loading correctly                                                             |
-|                                         |        |                                                                                              |
-|                                         |        |                                                                                              |
-|                                         |        |                                                                                              |
-|                                         |        |                                                                                              |
-|                                         |        |                                                                                              |
-|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
-| LOGIN, LOGOUT, REGISTER PAGES                                                                                                                   |
-|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
-| All links are working                   |   X    | All links are connected to the correct url path                                              |
-| All buttons are working                 |   X    | All buttons preform the correct action                                                       |
-| All text is rendered correctly          |   X    | All text is clear and visible                                                                |
-| Page is responsive                      |   X    | Page responds to screen size                                                                 |
-| All input fields are working            |   X    | All inputs work correctly                                                                    |
-| log out functions correctly             |   X    | Users can log out with message response                                                      |
-| log in functions correctly              |   X    | User can log in with message response and status at top right header                         |
-| Register new user is possible           |   X    | New users can be created on the Register page                                                |
-|                                         |        |                                                                                              |
-|                                         |        |                                                                                              |
-|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
-| ROOM BOOKING PAGE                                                                                                                               |
-|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
-| All links are working                   |   X    | All links are connected to the correct url path                                              |
-| All buttons are working                 |   X    | All buttons preform the correct action                                                       |
-| All text is rendered correctly          |   X    | All text is clear and visible                                                                |
-| Page is responsive                      |   X    | Page responds to screen size                                                                 |
-| All input fields are working            |   X    | All inputs work correctly, and display errors on blank or wrong format                       |
-| Booking fuction creates new booking code|   X    | New bookings are created and user is noified of booking code                                 |
-| Room card displays correctly            |   X    | All text on room card is displayed correctly                                                 |
+|                  Tests                            | Passed |                                           Comments                                           |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+
+| GENERAL SOFTWARE TESTS                                                                                                                                    |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| HTML validation                                   |    X   | Passed Markup Validation Service without any errors not related to Django Template Language  |
+| CSS validation                                    |    X   | Passed CSS Validation Service without errors                                                 |
+| Check code runs in local terminal                 |    X   | One Hotel runs in local Python terminal                                                      |
+| Check code runs on Heroku                         |    X   | One Hotel is deployed and running on Heroku                                                  |
+| Deployed version is latest main branch            |    X   | Deployed version is up to date                                                               |
+| Deployed version has DEBUG set to FALSE           |    X   | Deployed version of Hotel One has debug value set FALSE                                      |
+| Automatic tests pass without errors               |    X   | All automatic tests pass                                                                     |
+| Automatic tests pass with out failures            |    X   | All automatic tests pass                                                                     |
+| Code comments are checked                         |    X   | Code has correct comments on functions, no code is commented out                             |
+|                                                                                                                                                           |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| HOME PAGE                                                                                                                                                 |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| All links are working                             |    X   | All links are connected to the correct url path                                              |
+| All buttons are working                           |    X   | All buttons preform the correct action                                                       |
+| All text is rendered correctly                    |    X   | All text is clear and visible                                                                |
+| Page is responsive                                |    X   | Page responds to screen size                                                                 |
+| All images are loading                            |    X   | All images are loading correctly                                                             |
+|                                                   |        |                                                                                              |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| ROOM SEARCH PAGE                                                                                                                                          |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| All links are working                             |   X    | All links are connected to the correct url path                                              |
+| All buttons are working                           |   X    | All buttons preform the correct action                                                       |
+| All text is rendered correctly                    |   X    | All text is clear and visible                                                                |
+| Page is responsive                                |   X    | Page responds to screen size                                                                 |
+| All images are loading                            |   X    | All images are loading correctly                                                             |
+|                                                   |        |                                                                                              |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| LOGIN, LOGOUT, REGISTER PAGES                                                                                                                             |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| All links are working                             |   X    | All links are connected to the correct url path                                              |
+| All buttons are working                           |   X    | All buttons preform the correct action                                                       |
+| All text is rendered correctly                    |   X    | All text is clear and visible                                                                |
+| Page is responsive                                |   X    | Page responds to screen size                                                                 |
+| All input fields are working                      |   X    | All inputs work correctly                                                                    |
+| log out functions correctly                       |   X    | Users can log out with message response                                                      |
+| log in functions correctly                        |   X    | User can log in with message response and status at top right header                         |
+| Register new user is possible                     |   X    | New users can be created on the Register page                                                |
+|                                                   |        |                                                                                              |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| ROOM BOOKING PAGE                                                                                                                                         |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| All links are working                             |   X    | All links are connected to the correct url path                                              |
+| All buttons are working                           |   X    | All buttons preform the correct action                                                       |
+| All text is rendered correctly                    |   X    | All text is clear and visible                                                                |
+| Page is responsive                                |   X    | Page responds to screen size                                                                 |
+| All input fields are working                      |   X    | All inputs work correctly, and display errors on blank or wrong format                       |
+| Booking fuction creates new booking code          |   X    | New bookings are created and user is noified of booking code                                 |
+| Room card displays correctly                      |   X    | All text on room card is displayed correctly                                                 |
+|                                                   |        |                                                                                              |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| USER BOOKINGS PAGE                                                                                                                                        |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| All links are working                             |   X    | All links are connected to the correct url path                                              |
+| All buttons are working                           |   X    | All buttons preform the correct action                                                       |
+| All text is rendered correctly                    |   X    | All text is clear and visible                                                                |
+| Page is responsive                                |   X    | Page responds to screen size                                                                 |
+| Existing bookings are displayed                   |   X    | All user bookings are displayed in a table                                                   |
+| Users are unable to edit approved bookings        |   X    | Users are blocked from editing or deleteing approved bookings, warning message is sent       |
+| users are able to edit date of In Review bookings |   X    | Dates can be modified by users                                                               |
+|                                                   |        |                                                                                              |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
 
 ### Code Validation Tests
 
