@@ -135,21 +135,18 @@ I have manually tested this project with the following tests:
 | Automatic tests pass without errors          | X          | All automatic tests pass.                                                                 |
 | Automatic tests pass without failures        | X          | All automatic tests pass.                                                                 |
 | Code comments are checked                    | X          | Code has correct comments on functions; no code is commented out unnecessarily.           |
-
 | **HOME PAGE**                                |            |                                                                                           |
 | All links are working                        | X          | All links are connected to the correct URL path.                                          |
 | All buttons are working                      | X          | All buttons perform the correct action.                                                   |
 | All text is rendered correctly               | X          | All text is clear and visible.                                                            |
 | Page is responsive                           | X          | Page responds to screen size.                                                             |
 | All images are loading                       | X          | All images are loading correctly.                                                        |
-
 | **ROOM SEARCH PAGE**                         |            |                                                                                           |
 | All links are working                        | X          | All links are connected to the correct URL path.                                          |
 | All buttons are working                      | X          | All buttons perform the correct action.                                                   |
 | All text is rendered correctly               | X          | All text is clear and visible.                                                            |
 | Page is responsive                           | X          | Page responds to screen size.                                                             |
 | All images are loading                       | X          | All images are loading correctly.                                                        |
-
 | **LOGIN, LOGOUT, REGISTER PAGES**            |            |                                                                                           |
 | All links are working                        | X          | All links are connected to the correct URL path.                                          |
 | All buttons are working                      | X          | All buttons perform the correct action.                                                   |
@@ -159,7 +156,6 @@ I have manually tested this project with the following tests:
 | Log out functions correctly                  | X          | Users can log out with a message response.                                                |
 | Log in functions correctly                   | X          | Users can log in with a message response and status at the top-right header.              |
 | Register new user is possible                | X          | New users can be created on the Register page.                                            |
-
 | **ROOM BOOKING PAGE**                        |            |                                                                                           |
 | All links are working                        | X          | All links are connected to the correct URL path.                                          |
 | All buttons are working                      | X          | All buttons perform the correct action.                                                   |
@@ -168,7 +164,6 @@ I have manually tested this project with the following tests:
 | All input fields are working                 | X          | All inputs work correctly and display errors on blank or wrong format.                    |
 | Booking function creates new booking code    | X          | New bookings are created, and the user is notified of the booking code.                   |
 | Room card displays correctly                 | X          | All text on the room card is displayed correctly.                                         |
-
 | **USER BOOKINGS PAGE**                       |            |                                                                                           |
 | All links are working                        | X          | All links are connected to the correct URL path.                                          |
 | All buttons are working                      | X          | All buttons perform the correct action.                                                   |
