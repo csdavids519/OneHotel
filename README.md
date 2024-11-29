@@ -4,9 +4,9 @@
 *Hotel One* is a site based on a ficticous hotel, where users can create an account, search and book a hotel room, and manage their existing booking information.
 This site is created with Django and runs PostgreSQL to manage a database of hotel room data and user booking data.
 
-<!-- The live site can be found here: [Hotel One](LINK)!!!! -->
+The live site can be found here: [Hotel One](https://onehotel-764151fc8ccf.herokuapp.com/)
 
-<!-- ![Responsive](documentation/images/amiresponsive.png) -->
+![Welcome](documentation/images/welcome.png)
 
 ## Deployment to GitHub Pages
 
@@ -15,9 +15,13 @@ This project was deployed with Heroku.
 Steps to deploy on Heroku:
 
 1. Create Heroku account
-2. Via settings tab ensure Config Vars is set as:
-    DISABLE_COLLECTSTATIC = 1
-3.
+2. Via settings link a Config Vars variable to the data base
+  ![ConfigVars](documentation/images/config_vars.png)
+3. In Deploy tab connect to the GitHub repo.
+  ![HerokuRepo](documentation/images/heroku_repo.png)
+4. choose automatic or manual deployments
+5. Choose a branch to deploy
+6. Deploy project
 
 ## Features
 
@@ -76,11 +80,11 @@ Once the desired room is found it is possible to make a request a booking.
 - [unsplash](unsplash.com) - provided free use images of the hotel rooms.
 - Google Dev Tools was used for website testing.
 - Google Light House was used for website testing.
-<!-- - [Responsive Design Checker](https://responsivedesignchecker.com/) was used to check the responsiveness of the site on multiple screen sizes. -->
+- [Responsive Design Checker](https://responsivedesignchecker.com/) was used to check the responsiveness of the site on multiple screen sizes.
 <!-- - [Am I responsive](https://ui.dev/amiresponsive) was used to generate an image of the site on different screen sizes. -->
-<!-- - [Markup Validation Service](https://validator.w3.org/) Was used to validate the HTML code. -->
-<!-- - [CSS Validation Service](https://jigsaw.w3.org/css-validator/) Was used to validate the CSS code. -->
-<!-- - [JS Hint](https://jshint.com/) was used to validate the JavaScript code. -->
+- [Markup Validation Service](https://validator.w3.org/) Was used to validate the HTML code.
+- [CSS Validation Service](https://jigsaw.w3.org/css-validator/) Was used to validate the CSS code.
+<!-- - [JS ](https://om/) was used to validate the Python code. -->
 
 ---
 
