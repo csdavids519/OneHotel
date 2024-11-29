@@ -37,3 +37,4 @@ class TestBookingForm(TestCase):
              'reserved_end_date': ''})
         self.assertFalse(
             form.is_valid(), msg="Date end input is blank")
+
