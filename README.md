@@ -80,11 +80,9 @@ Once the desired room is found it is possible to make a request a booking.
 - [unsplash](unsplash.com) - provided free use images of the hotel rooms.
 - Google Dev Tools was used for website testing.
 - Google Light House was used for website testing.
-- [Responsive Design Checker](https://responsivedesignchecker.com/) was used to check the responsiveness of the site on multiple screen sizes.
-<!-- - [Am I responsive](https://ui.dev/amiresponsive) was used to generate an image of the site on different screen sizes. -->
 - [Markup Validation Service](https://validator.w3.org/) Was used to validate the HTML code.
 - [CSS Validation Service](https://jigsaw.w3.org/css-validator/) Was used to validate the CSS code.
-<!-- - [JS ](https://om/) was used to validate the Python code. -->
+- [Flake8](https://flake8.pycqa.org/en/latest/#) Was used to validate the Python code.
 
 ---
 
@@ -96,50 +94,30 @@ Once the desired room is found it is possible to make a request a booking.
 
 ### Tests
 
-<!-- - Screen size responsiveness of the website [Responsive Design Checker](https://responsivedesignchecker.com/) was used to view the site on multiple screen sizes.
-  - The site responded as expected on all screen sizes, the game board is able to adjust to the screen size on page load.
-- All buttons and links were tested on multiple devices.
-  - All buttons are working as expected and linked to the correct locations.
-- All clickable links have been checked for a change in mouse pointer.
-  - All buttons change the mouse pointer as expected on all links
-- All pages have been checked in multiple browser types including Chrome, Firefox, Edge
-  - Moon Jumper is running without issues in all browsers tested -->
+Due to the models of Hotel One, its not possible to run tests within the limitations of sqlite3, therefore Postgresql is required.
+Running automatic tests requires the installation of PostgreSQL on the local pc.
 
-### Light House Tests
+To install visit [PostgreSQL](https://www.postgresql.org/download/) and check the installation instructions for your operating system.
 
-<!-- - See below for Chrome Light House test results on each web page. -->
+start postgres and create a new user
+"""
+  sudo -u postgres psql
+  postgres=# CREATE USER admin WITH PASSWORD 'admin' SUPERUSER;
+"""
 
-#### Index page
+Create a postgresql user:
+  Role name: admin
+  passowrd: admin
+  permissions: superuser, create DB
 
-<!-- ![Light House Index](documentation/images/lighthouse_index.png) -->
-
-#### Game board page
-
-<!-- ![Light House Game board](documentation/images/lighthouse_gameboard.png) -->
+once this is prepared and the postgresql server is running locally, its possible to run python tests from HotelOne project.
 
 ### Code Validation Tests
 
-- See below the results of the JS, HTML and CSS validators.
-
-#### HTML Validation Index
-
-![HTML Validation Index](documentation/images/validatorhtml_index.png)
-
-#### HTML Validation Game Board
-
-![HTML Validation Game board](documentation/images/validatorhtml_gameboard.png)
-
-#### CSS Validation
-
-<!-- ![CSS Validation](documentation/images/validatorhtml_css.png) -->
-
-#### JS Hints Index - No warnings or errors found
-
-![JS Hints Index](documentation/images/jshint_index.png)
-
-#### JS Hints Moon Jumper - No warnings or errors found
-
-![JS Hints Moon Jumper](documentation/images/jshint_moonjumper.png)
+- Hotel One passes HTML and CSS validation without any errors that are unrelated to Django specfic projects.
+- HTML pages are checked with [Markup Validation Service](https://validator.w3.org/)
+- CSS code was checked with [CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+- Python code has been check with a linter extension [Flake8](https://flake8.pycqa.org/en/latest/#)
 
 ### Resolved Bugs / Known Issues
 
