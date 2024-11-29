@@ -27,7 +27,6 @@ class Room(models.Model):
     floor = models.IntegerField(null=True)
     bed_type = models.CharField(null=True, choices=BED_TYPE)
     view = models.CharField(null=True, choices=VIEW)
-    room_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return str(self.room_number)
