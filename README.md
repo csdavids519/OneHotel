@@ -83,6 +83,7 @@ Once the desired room is found it is possible to make a request a booking.
 - [Markup Validation Service](https://validator.w3.org/) Was used to validate the HTML code.
 - [CSS Validation Service](https://jigsaw.w3.org/css-validator/) Was used to validate the CSS code.
 - [Flake8](https://flake8.pycqa.org/en/latest/#) Was used to validate the Python code.
+- [Tables Generator](https://www.tablesgenerator.com/markdown_tables) Was used to quickly create the manual tests table in markdown
 
 ---
 
