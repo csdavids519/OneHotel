@@ -12,3 +12,6 @@ class BookingForm(forms.ModelForm):
             'reserved_end_date':
             forms.DateInput(attrs={'required': 'required', 'type': 'date'}),
         }
+
+    reserved_start_date = forms.DateField(required=True)
+    reserved_end_date = forms.DateField(required=True)

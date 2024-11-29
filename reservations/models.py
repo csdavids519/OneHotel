@@ -1,5 +1,4 @@
 from django.db import models
-from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -23,10 +22,10 @@ class Room(models.Model):
     )
 
     room_number = models.IntegerField(unique=True)
-    room_type = models.CharField(null=True, choices=ROOM_TYPE)
-    floor = models.IntegerField(null=True)
-    bed_type = models.CharField(null=True, choices=BED_TYPE)
-    view = models.CharField(null=True, choices=VIEW)
+    room_type = models.CharField(blank=True, null=True, choices=ROOM_TYPE)
+    floor = models.IntegerField(blank=True, null=True)
+    bed_type = models.CharField(blank=True, null=True, choices=BED_TYPE)
+    view = models.CharField(blank=True, null=True, choices=VIEW)
 
     def __str__(self):
         return str(self.room_number)
