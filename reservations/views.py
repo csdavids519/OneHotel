@@ -133,23 +133,33 @@ def booking_edit(request, booking_code):
         booking_code=booking_code,
         user_name=request.user
     )
+    # check if booking is already approved
+    if booking.status == 'APPROVED':
+        messages.add_message(
+            request,
+            messages.WARNING,
+            "SORRY! Your booking is already approved, "
+            "please contact support to modify your booking"
+        )
 
-    # if edit is made redirect to 'user_booking'
-    if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking)
-        if form.is_valid():
-            form.save()
-            return redirect('user_booking')
-
-    # if no bookings are made, display existing BookingForm data
+        return redirect('user_booking')
     else:
-        form = BookingForm(instance=booking)
+        # if edit is made redirect to 'user_booking'
+        if request.method == 'POST':
+            form = BookingForm(request.POST, instance=booking)
+            if form.is_valid():
+                form.save()
+                return redirect('user_booking')
 
-    return render(
-        request,
-        'edit_booking.html',
-        {'form': form, 'booking': booking}
-    )
+        # if no bookings are made, display existing BookingForm data
+        else:
+            form = BookingForm(instance=booking)
+
+        return render(
+            request,
+            'edit_booking.html',
+            {'form': form, 'booking': booking}
+        )
 
 
 def delete_booking(request, booking_code):
@@ -164,7 +174,7 @@ def delete_booking(request, booking_code):
             request,
             messages.WARNING,
             "SORRY! Your booking is already approved, "
-            "please contact support to cancel"
+            "please contact support to modify your booking"
         )
     else:
         booking.delete()
