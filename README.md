@@ -94,6 +94,8 @@ Once the desired room is found it is possible to make a request a booking.
 
 ### Tests
 
+#### Automatic Tests
+
 Due to the models of Hotel One, its not possible to run tests within the limitations of sqlite3, therefore Postgresql is required.
 Running automatic tests requires the installation of PostgreSQL on the local pc.
 
@@ -111,6 +113,75 @@ Create a postgresql user:
   permissions: superuser, create DB
 
 once this is prepared and the postgresql server is running locally, its possible to run python tests from HotelOne project.
+
+Automatic tests of Hotel One will check the booking form fields are entered correctly and not missing data as they are required. Where possible the automatic tests will also check that pages are rendered using the correct templates.
+
+#### Manual Tests
+
+I have manually tested this project with the following tests:
+
+|                  Tests                  | Passed |                                           Comments                                           |
+|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
+| GENERAL SOFTWARE TESTS                                                                                                                          |
+|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
+| HTML validation                         |    X   | Passed Markup Validation Service without any errors not related to Django Template Language  |
+| CSS validation                          |    X   | Passed CSS Validation Service without errors                                                 |
+| Check code runs in local terminal       |    X   | One Hotel runs in local Python terminal                                                      |
+| Check code runs on Heroku               |    X   | One Hotel is deployed and running on Heroku                                                  |
+| Deployed version is latest main branch  |    X   | Deployed version is up to date                                                               |
+| Deployed version has DEBUG set to FALSE |    X   | Deployed version of Hotel One has debug value set FALSE                                      |
+| Automatic tests pass without errors     |    X   | All automatic tests pass                                                                     |
+| Automatic tests pass with out failures  |    X   | All automatic tests pass                                                                     |
+| Code comments are checked               |    X   | Code has correct comments on functions, no code is commented out                             |
+|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
+| HOME PAGE                                                                                                                                       |
+|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
+| All links are working                   |    X   | All links are connected to the correct url path                                              |
+| All buttons are working                 |    X   | All buttons preform the correct action                                                       |
+| All text is rendered correctly          |    X   | All text is clear and visible                                                                |
+| Page is responsive                      |    X   | Page responds to screen size                                                                 |
+| All images are loading                  |    X   | All images are loading correctly                                                             |
+|                                         |        |                                                                                              |
+|                                         |        |                                                                                              |
+|                                         |        |                                                                                              |
+|                                         |        |                                                                                              |
+|                                         |        |                                                                                              |
+|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
+| ROOM SEARCH PAGE                                                                                                                                |
+|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
+| All links are working                   |   X    | All links are connected to the correct url path                                              |
+| All buttons are working                 |   X    | All buttons preform the correct action                                                       |
+| All text is rendered correctly          |   X    | All text is clear and visible                                                                |
+| Page is responsive                      |   X    | Page responds to screen size                                                                 |
+| All images are loading                  |   X    | All images are loading correctly                                                             |
+|                                         |        |                                                                                              |
+|                                         |        |                                                                                              |
+|                                         |        |                                                                                              |
+|                                         |        |                                                                                              |
+|                                         |        |                                                                                              |
+|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
+| LOGIN, LOGOUT, REGISTER PAGES                                                                                                                   |
+|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
+| All links are working                   |   X    | All links are connected to the correct url path                                              |
+| All buttons are working                 |   X    | All buttons preform the correct action                                                       |
+| All text is rendered correctly          |   X    | All text is clear and visible                                                                |
+| Page is responsive                      |   X    | Page responds to screen size                                                                 |
+| All input fields are working            |   X    | All inputs work correctly                                                                    |
+| log out functions correctly             |   X    | Users can log out with message response                                                      |
+| log in functions correctly              |   X    | User can log in with message response and status at top right header                         |
+| Register new user is possible           |   X    | New users can be created on the Register page                                                |
+|                                         |        |                                                                                              |
+|                                         |        |                                                                                              |
+|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
+| ROOM BOOKING PAGE                                                                                                                               |
+|:---------------------------------------:|:------:|:--------------------------------------------------------------------------------------------:|
+| All links are working                   |   X    | All links are connected to the correct url path                                              |
+| All buttons are working                 |   X    | All buttons preform the correct action                                                       |
+| All text is rendered correctly          |   X    | All text is clear and visible                                                                |
+| Page is responsive                      |   X    | Page responds to screen size                                                                 |
+| All input fields are working            |   X    | All inputs work correctly, and display errors on blank or wrong format                       |
+| Booking fuction creates new booking code|   X    | New bookings are created and user is noified of booking code                                 |
+| Room card displays correctly            |   X    | All text on room card is displayed correctly                                                 |
 
 ### Code Validation Tests
 
