@@ -11,21 +11,21 @@ import random
 
 def FilterList(request):
     """
-    Filters for the searched rooms. 
+    Filters for the searched rooms.
     Collect all Room objects to 'qs' queryset,
     use a filter to check for each query request from the user
 
     render the resulting qs list to room_search.html
 
-    Code Reference: Matt Freire from YouTube see Read Me for detail. 
+    Code Reference: Matt Freire from YouTube see Read Me for detail.
     """
-    # collet basic room model data to display page 
+    # collet basic room model data to display page
     qs = Room.objects.all()
     room_type_query = request.GET.get('room_type', '')
     bed_type_query = request.GET.get('bed_type', '')
     view_type_query = request.GET.get('view_type', '')
 
-    # Collect all filter parameters from the fitlter request
+    # Collect all filter parameters from the filter request
     if request.GET:
         qs = Room.objects.all()
 

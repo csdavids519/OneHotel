@@ -1,7 +1,7 @@
 # *One Hotel*
 
 ---
-*Hotel One* is a site based on a ficticous hotel, where users can create an account, search and book a hotel room, and manage their existing booking information.
+*Hotel One* is a site based on a fictitious hotel, where users can create an account, search and book a hotel room, and manage their existing booking information.
 This site is created with Django and runs PostgreSQL to manage a database of hotel room data and user booking data.
 
 The live site can be found here: [Hotel One](https://onehotel-764151fc8ccf.herokuapp.com/)
@@ -25,7 +25,7 @@ Steps to deploy on Heroku:
 
 ## Features
 
-- Users are greeted with a welcome page that provides a quic link to the search rooms page.
+- Users are greeted with a welcome page that provides a quick link to the search rooms page.
 - The home page also provides links to all site pages and displays the current logged in user status.
 
 ### User Login
@@ -59,13 +59,13 @@ Once the desired room is found it is possible to make a request a booking.
 
 ### Returning Visitor Goals
 
-- Returning visitors have access to view existing bookngs status and request edits.
+- Returning visitors have access to view existing bookings status and request edits.
 
 ---
 
 ## Technologies Used
 
-- [Django](https://www.djangoproject.com/) - framwork used to create Hotel One.
+- [Django](https://www.djangoproject.com/) - framework used to create Hotel One.
 - [PostgreSQL](https://www.postgresql.org/) - relational database used to manage Hotel One backend.
 - [Bootstrap](https://getbootstrap.com/) - used to manage the css of this project.
 - [Heroku](https://www.heroku.com/home) - was used to deploy the project.
@@ -111,7 +111,7 @@ start postgres and create a new user
 
 Create a postgresql user:
   Role name: admin
-  passowrd: admin
+  password: admin
   permissions: superuser, create DB
 
 once this is prepared and the postgresql server is running locally, its possible to run python tests from HotelOne project.
@@ -121,8 +121,6 @@ Automatic tests of Hotel One will check the booking form fields are entered corr
 #### Manual Tests
 
 I have manually tested this project with the following tests:
-
-# Test Results
 
 | **Tests**                                    | **Passed** | **Comments**                                                                               |
 |----------------------------------------------|------------|-------------------------------------------------------------------------------------------|
@@ -176,17 +174,20 @@ I have manually tested this project with the following tests:
 
 ### Code Validation Tests
 
-- Hotel One passes HTML and CSS validation without any errors that are unrelated to Django specfic projects.
+- Hotel One passes HTML and CSS validation without any errors that are unrelated to Django specific projects.
 - HTML pages are checked with [Markup Validation Service](https://validator.w3.org/)
 - CSS code was checked with [CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 - Python code has been check with a linter extension [Flake8](https://flake8.pycqa.org/en/latest/#)
 
-### Resolved Bugs / Known Issues
+### Resolved Bugs / Known Issues / Challenges
 
-<!-- - While adding multiple jump objects, the issue arose that no objects would get displayed. This is because at game load the jump objects array is empty and the first check is to see what object is loaded.
-The solution was to create a "first jump object", on game start a "small rock" jump object is loaded to the first line of the jump array. Once the first object is loaded the random objects can be created to the jump object array.
+- While attempting to run automatic tests, it was discovered sqlite3 database was not able to manage the Hotel One models.
+Therefor some effort was spent to link a local postgresql database server to the local host. This allowed the tests to run as expected.
+Because of this change, to run automatic Python tests, its required to install postgresql on the local pc and create a user called admin with password admin.
 
-- The jump object array would not get cleared after objects passed the game board. This was due to the first line in the array having a different format and no screen position to measure. The solution was to remove the first array line by checking the second array line. when the second object passed a screen position limit the first object is removed from the array. -->
+- The original development plan of the Hotel One models included a customer model, the idea was to use a booking code model to link a customer and a room. During development it was realized this was not necessary as Django could manage the user accounts, once a booking is created it loads user and room information into the booking model.
+
+- Creating booking page posed challenges to get the 'room_detail' view to work as intended with adding a unique booking code to each new booking. While also linking the current room information and user information. This was accomplished in the end by directing the user to a separate page for each room "room detail", this allowed the usage of the room number as a link to the room model data. This Room data was then passed to the booking model along with the current logged in user. During the POST of the room_detail view, each post request creates a random string to be used as the booking code.
 
 ### Open Bugs / Issues
 
@@ -195,8 +196,9 @@ The solution was to create a "first jump object", on game start a "small rock" j
 ### Future improvements
 
 - Currently users must wait for admin booking approval, this could become an automated feature based on room availability.
-- Automatic emails could be sent to users regarding booking status or other informaiton.
+- Automatic emails could be sent to users regarding booking status or other information.
 - User experience could be improved regarding managing existing bookings.
+- Additional and more complicated automatic tests could be added to more quickly check site functionality.
 
 ---
 
@@ -210,18 +212,16 @@ The solution was to create a "first jump object", on game start a "small rock" j
 ### Acknowledgments
 
 - [Iuliia Konovalova](https://github.com/IuliiaKonovalova) Who has been a knowledgeable and encouraging mentor on this project.
-<!-- - [Kevin Powell](https://www.youtube.com/@KevinPowell) Who provided lessons on using CSS modals.
-- [ImKennyYip](https://github.com/ImKennyYip/flappy-bird?tab=readme-ov-file) This project has been based on the lessons learned from ImKennyYip's YouTube tutorial on how to make Flappy Bird.
-- [GitHub](https://pages.github.com/) Pages for free hosting of the live site.
-- [w3school](https://www.w3schools.com) Was used as a reference for all html, css, and javascript questions.
-- [Text compare](https://www.textcompare.org/) used to compare Moon Jumper to the reference Flappy Bird project. -->
+- [Heroku](https://www.heroku.com/) Pages for free hosting of the live site.
 
-### Code Refrences
+### Code References
 
-- [stackoverflow](https://stackoverflow.com/questions/2257441/random-string-generation-with-upper-case-letters-and-digits) - this code was refreenced to create the booking code function "create_booking_code".
+- [stackoverflow](https://stackoverflow.com/questions/2257441/random-string-generation-with-upper-case-letters-and-digits) - this code was referenced to create the booking code function "create_booking_code".
 - [Matt Freire](https://youtu.be/vU0VeFN-abU?si=Hjk-YYMc2y1SorgN) - Matt Freire Youtube video assisted with how to create the rooms filter functions found in "FilterList"
 
 ## Additional Resources
 
-- [Django for Beginners 5th Edition](https://www.amazon.de/Django-Beginners-5th-Modern-Applications/dp/173546726X) - A resorce for general Django topics.
+- [Django for Beginners 5th Edition](https://www.amazon.de/Django-Beginners-5th-Modern-Applications/dp/173546726X) - A resource for general Django topics.
 - [Django 5 by Example](https://www.packtpub.com/en-us/product/django-5-by-example-9781805122340) - Additional examples on how to create Django apps.
+- [ChatGPT](https://chatgpt.com/) - for responding to endless questions as a valued searching resource. This is truly the end of the Google search bar.
+- [StackOverflow](https://stackoverflow.com/) - as a resource for 'how to' when things get challenging.
