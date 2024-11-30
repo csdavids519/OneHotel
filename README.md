@@ -6,6 +6,10 @@ This site is created with Django and runs PostgreSQL to manage a database of hot
 
 The live site can be found here: [Hotel One](https://onehotel-764151fc8ccf.herokuapp.com/)
 
+The github repository can be found here:[GitHub](https://github.com/csdavids519/OneHotel)
+
+The project agile task list can be found here: [Github Projects](https://github.com/users/csdavids519/projects/2)
+
 ![Welcome](documentation/images/welcome.png)
 
 ## Deployment to GitHub Pages
