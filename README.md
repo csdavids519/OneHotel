@@ -103,10 +103,11 @@ Running automatic tests requires the installation of PostgreSQL on the local pc.
 To install visit [PostgreSQL](https://www.postgresql.org/download/) and check the installation instructions for your operating system.
 
 start postgres and create a new user
-"""
-  sudo -u postgres psql
-  postgres=# CREATE USER admin WITH PASSWORD 'admin' SUPERUSER;
-"""
+
+  ``` bash
+    sudo -u postgres psql
+    postgres=# CREATE USER admin WITH PASSWORD 'admin' SUPERUSER;
+  ```
 
 Create a postgresql user:
   Role name: admin
