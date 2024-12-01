@@ -217,6 +217,7 @@ Because of this change, to run automatic Python tests, its required to install p
 - Automatic emails could be sent to users regarding booking status or other information.
 - User experience could be improved regarding managing existing bookings.
 - Additional and more complicated automatic tests could be added to more quickly check site functionality.
+- Currently its possible to enter any date into the room booking form, in the future this could be modified to block dates in the past and only allow the end date after the start date. Currently bookings need to be approved manually so dates would also be reviewed manually.
 
 ---
 
