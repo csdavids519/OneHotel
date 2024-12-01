@@ -15,7 +15,7 @@ Username: CodeInstitute  Password: admin2024
 
 ![Welcome](documentation/images/welcome.png)
 
-## Deployment to GitHub Pages
+## Deployment to Heroku
 
 This project was deployed with Heroku.
 
