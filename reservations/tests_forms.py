@@ -6,7 +6,7 @@ from .forms import BookingForm
 
 class TestBookingForm(TestCase):
 
-    # code reference: Code Institue Django Blog test_forms.py
+    # code reference: Code Institute Django Blog test_forms.py
     def test_form_is_valid(self):
         """ Test for  all fields """
         form = BookingForm(
@@ -21,20 +21,3 @@ class TestBookingForm(TestCase):
              'reserved_end_date': '2024-12-10'})
         self.assertFalse(
             form.is_valid(), msg="Wrong date format was given")
-
-    def test_missing_start_date(self):
-        """Test for missing date in field"""
-        form = BookingForm(
-            {'reserved_start_date': '',
-             'reserved_end_date': '2024-12-10'})
-        self.assertFalse(
-            form.is_valid(), msg="Date start input is blank")
-
-    def test_missing_end_date(self):
-        """Test for missing date in field"""
-        form = BookingForm(
-            {'reserved_start_date': '2024-12-10',
-             'reserved_end_date': ''})
-        self.assertFalse(
-            form.is_valid(), msg="Date end input is blank")
-

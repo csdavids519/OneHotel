@@ -92,12 +92,12 @@ def room_detail(request, room_number):
             messages.add_message(
                 request,
                 messages.SUCCESS,
-                "SUCCESS! Your booking request has been"
+                "SUCCESS! Your booking request has been "
                 "submitted for approval!"
             )
             messages.add_message(
                 request, messages.SUCCESS,
-                "View your booking status on the User"
+                "View your booking status on the User "
                 f"Bookings page. Booking code: {booking.booking_code}"
             )
 
