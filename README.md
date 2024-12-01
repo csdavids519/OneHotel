@@ -95,10 +95,10 @@ Once the desired room is found it is possible to make a request a booking.
 
 - Design of Hotel One is based on the Bootstrap template for ease of usage and clear design language.
 
-- The wireframe design:
-![Wireframe](documentation/OneHotel_Wire diagram.pdf)
+- The wireframe design
+[Wireframe](documentation/OneHotel_Wire_diagram.pdf)
 
-- The original ER diagram:
+- The original ER diagram
 ![Original ERD](documentation/ERD.png).
 
 - Updated current ER diagram
