@@ -217,6 +217,31 @@ Because of this change, to run automatic Python tests, its required to install p
 
 ---
 
+## Data Schema
+
+Hotel One uses two models 'Room' and  'Booking'.
+
+Room model is used to manage all the details regarding each room within Hotel One.
+Booking model is used connect a user to a room and create a unique booking code.
+
+Room Model:
+| Room type   | level of room quality a guest should expect from basic to executive |
+| View        | type of view the room provides city or ocean                        |
+| floor       | what floor of the hotel the room is found                           |
+| bed type    | what type of bed is available for the room                          |
+| room number | the unique identifier for each room                                 |
+
+Booking model:
+| booking code        | unique identifier code created once the booking is created by the user                           |
+| reserved start date | the requested start date of the room reservation                                                 |
+| reserved end date   | the requested end date of the room reservation                                                   |
+| room number         | the room number identifier of the room selected for the booking to connect the booking to a room |
+| user name           | the current logged in user to connect the booking to the user                                    |
+| status              | the current status of the room, 'In Review' until an admin user approves the booking             |
+| room info           | Foreign Key to link the booking to the Room model                                                |
+
+---
+
 ## Credits
 
 ### Media
