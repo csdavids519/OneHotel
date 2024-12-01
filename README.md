@@ -10,6 +10,9 @@ The github repository can be found here:[GitHub](https://github.com/csdavids519/
 
 The project agile task list can be found here: [Github Projects](https://github.com/users/csdavids519/projects/2)
 
+Code Institute admin account has been created so testing of the admin functions is possible, sign in with the following.
+Username: CodeInstitute  Password: admin2024
+
 ![Welcome](documentation/images/welcome.png)
 
 ## Deployment to GitHub Pages
