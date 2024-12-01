@@ -8,19 +8,61 @@
       <div class="card-body border border-5 rounded-3">
         <div class="row g-0">
           <div class="col-md-4">
+            <!-- carousel for each room type -->
+            {% if "Basic" in room_type %}
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="{% static 'images/basic_room/basicroom_1.jpg' %}" class="d-block w-100" alt="...">
+                  <img src="{% static 'images/basic_room/basicroom_1.jpg' %}" class="d-block w-100"
+                    alt="image of basic room">
                 </div>
                 <div class="carousel-item">
-                  <img src="{% static 'images/basic_room/basicroom_2.jpg' %}" class="d-block w-100" alt="...">
+                  <img src="{% static 'images/basic_room/basicroom_2.jpg' %}" class="d-block w-100"
+                    alt="image of basic room">
                 </div>
                 <div class="carousel-item">
-                  <img src="{% static 'images/basic_room/basicroom_3.jpg' %}" class="d-block w-100" alt="...">
+                  <img src="{% static 'images/basic_room/basicroom_3.jpg' %}" class="d-block w-100"
+                    alt="image of basic room">
                 </div>
               </div>
             </div>
+            {% elif "Premium" in room_type %}
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="{% static 'images/premium_room/premiumroom_1.jpg' %}" class="d-block w-100"
+                    alt="image of premium room">
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/premium_room/premiumroom_2.jpg' %}" class="d-block w-100"
+                    alt="image of premium room">
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/premium_room/premiumroom_3.jpg' %}" class="d-block w-100"
+                    alt="image of premium room">
+                </div>
+              </div>
+            </div>
+            {% elif "Executive" in room_type %}
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="{% static 'images/executive_room/executiveroom_1.jpg' %}" class="d-block w-100"
+                    alt="image of executive room">
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/executive_room/executiveroom_2.jpg' %}" class="d-block w-100"
+                    alt="image of executive room">
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/executive_room/executiveroom_3.jpg' %}" class="d-block w-100"
+                    alt="image of executive room">
+                </div>
+              </div>
+            </div>
+            {% else %}
+            <img src="{% static 'images/default.jpg' %}" class="d-block w-100" alt="default image of hotel">
+            {% endif %}
           </div>
           <div class="col-md-8">
             <div class="card-body">
